@@ -14,8 +14,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "INSERT INTO utilisateurs(address, prenom) VALUES(?, ?);")){
-            preparedStatement.setString(1, utilisateur.getAddresse());
-            preparedStatement.setString(2, utilisateur.getPassword());
+            preparedStatement.setString(1, utilisateur.getAdresse());
+            preparedStatement.setString(2, utilisateur.getMdp());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -29,11 +29,11 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
              ResultSet resultat = statement.executeQuery(
                      "SELECT nom, prenom FROM utilisateurs;")) {
             while (resultat.next()) {
-                String addresse = resultat.getString("addresse");
-                String password = resultat.getString("password");
+                String adresse = resultat.getString("adresse");
+                String mdp = resultat.getString("mdp");
                 Utilisateur utilisateur = new Utilisateur();
-                utilisateur.setAddresse(addresse);
-                utilisateur.setPassword(password);
+                utilisateur.setAdresse(adresse);
+                utilisateur.setMdp(mdp);
                 annuaire.add(utilisateur);
             }
         } catch (SQLException e) {

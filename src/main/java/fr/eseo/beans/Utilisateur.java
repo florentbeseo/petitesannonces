@@ -3,13 +3,15 @@ package fr.eseo.beans;
 public class Utilisateur
 {
     //attributs
-    private String adresse;     //addresse mail de l'utilisateur
-    private String mdp;         //mot de passe de l'utilisateur
-    private String nom;         //nom de l'utilisateur
-    private String prenom;      //prénom de l'utilisateur
-    private String anniversaire;//date d'anniversaire format aa/mm/jj
-    private boolean isAdmin;    //n'est pas admin  0 | 1 est admin
-    private boolean isBloque;   //n'est pas bloqué 0 | 1 est bloqué
+    private int idUtilisateur;  //Id de l'utilisateur
+    private String pseudo;      //Pseudonyme de l'utilisateur
+    private String adresse;     //Adresse mail de l'utilisateur
+    private String mdp;         //Mot de passe de l'utilisateur
+    private String nom;         //Nom de l'utilisateur
+    private String prenom;      //Prénom de l'utilisateur
+    private String anniversaire;//Date d'anniversaire format aa/mm/jj
+    private boolean isAdmin;    //N'est pas admin  0 | 1 est admin
+    private boolean isBloque;   //N'est pas bloqué 0 | 1 est bloqué
 
     //constructeur
     public Utilisateur()
@@ -91,5 +93,25 @@ public class Utilisateur
     public void setBloque ( boolean bloque )
     {
         isBloque = bloque;
+    }
+
+    public String getPseudo ( )
+    {
+        return pseudo;
+    }
+
+    public void setPseudo ( String pseudo )
+    {
+        this.pseudo = pseudo;
+    }
+
+    public int getIdUtilisateur ( )
+    {
+        return idUtilisateur;
+    }
+
+    public void setIdUtilisateur ( int idUtilisateur )
+    {
+        this.idUtilisateur = idUtilisateur;
     }
 }

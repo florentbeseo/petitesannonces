@@ -13,8 +13,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     public void ajouterUtilisateur(Utilisateur utilisateur) {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "INSERT INTO utilisateurs(address, prenom) VALUES(?, ?);")){
-            preparedStatement.setString(1, utilisateur.getAdresse());
+                     "INSERT INTO utilisateurs(pseudo, mdp) VALUES(?, ?);")){
+            preparedStatement.setString(1, utilisateur.getPseudo ());
             preparedStatement.setString(2, utilisateur.getMdp());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

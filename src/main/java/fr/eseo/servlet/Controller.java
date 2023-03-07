@@ -22,6 +22,7 @@ public class  Controller extends HttpServlet {
         DAOFactory daoFactory = DAOFactory.getInstance();
         daoutilisateur = daoFactory.getUtilisateurDao("MariaDB");
         actionMap.put("test", new Connexion());
+
     }
 
     @Override

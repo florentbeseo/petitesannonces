@@ -1,4 +1,6 @@
 package fr.eseo.beans;
 
-public class DAOAnnoncesMariaDB {
+public class DAOAnnoncesMariaDB implements DAOAnnonce{
+
+
 }

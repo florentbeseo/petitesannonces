@@ -17,4 +17,83 @@ public class Annonce
     //Getters setters
 
 
+    public int getIdAnnonce ( )
+    {
+        return idAnnonce;
+    }
+
+    public void setIdAnnonce ( int idAnnonce )
+    {
+        this.idAnnonce = idAnnonce;
+    }
+
+    public float getPrix ( )
+    {
+        return prix;
+    }
+
+    public void setPrix ( float prix )
+    {
+        this.prix = prix;
+    }
+
+    public String getExtra ( )
+    {
+        return extra;
+    }
+
+    public void setExtra ( String extra )
+    {
+        this.extra = extra;
+    }
+
+    public String getDescriptif ( )
+    {
+        return descriptif;
+    }
+
+    public void setDescriptif ( String descriptif )
+    {
+        this.descriptif = descriptif;
+    }
+
+    public Utilisateur getVendeur ( )
+    {
+        return vendeur;
+    }
+
+    public void setVendeur ( Utilisateur vendeur )
+    {
+        this.vendeur = vendeur;
+    }
+
+    public boolean isCategorie ( )
+    {
+        return categorie;
+    }
+
+    public void setCategorie ( boolean categorie )
+    {
+        this.categorie = categorie;
+    }
+
+    public boolean isVisible ( )
+    {
+        return isVisible;
+    }
+
+    public void setVisible ( boolean visible )
+    {
+        isVisible = visible;
+    }
+
+    public boolean isFini ( )
+    {
+        return isFini;
+    }
+
+    public void setFini ( boolean fini )
+    {
+        isFini = fini;
+    }
 }

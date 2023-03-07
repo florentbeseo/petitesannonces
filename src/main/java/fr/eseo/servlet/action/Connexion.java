@@ -12,6 +12,9 @@ public class Connexion implements Action {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur) throws ServletException, IOException {
+        if (request.getSession().getAttribute("Nu") != null){
+            forward(request, response, "jsp/index.jsp");
+        }
         forward(request, response, "jsp/page_connection.jsp");
     }
 }

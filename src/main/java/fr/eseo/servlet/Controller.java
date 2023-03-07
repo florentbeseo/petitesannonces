@@ -21,7 +21,7 @@ public class  Controller extends HttpServlet {
     public void init() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         daoutilisateur = daoFactory.getUtilisateurDao("MariaDB");
-        actionMap.put("test", new Connexion());
+        actionMap.put("connexion", new Connexion());
 
     }
 
@@ -39,13 +39,13 @@ public class  Controller extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
         if(id == null) {
-            id="test";
+            id="connexion";
         }
         Action action = actionMap.get(id);
         if(action != null) {
             action.execute(request, response, daoutilisateur);
         } else {
-            actionMap.get("test").execute(request, response, daoutilisateur);
+            actionMap.get("connexion").execute(request, response, daoutilisateur);
         }
     }
 }

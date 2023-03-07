@@ -56,3 +56,12 @@ a{
     float: right;
     background-color: grey;
 }
+
+#message_erreur_connexion, #message_erreur_noconnexion{
+    color: white;
+    text-align: center;
+}
+
+#test{
+    color: red;
+}

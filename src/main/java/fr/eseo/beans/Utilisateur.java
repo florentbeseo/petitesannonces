@@ -10,6 +10,7 @@ public class Utilisateur
     private String nom;         //Nom de l'utilisateur
     private String prenom;      //Prénom de l'utilisateur
     private String anniversaire;//Date d'anniversaire format aa/mm/jj
+    private String tel;         //Téléphone de l'utilisateur
     private boolean isAdmin;    //N'est pas admin  0 | 1 est admin
     private boolean isBloque;   //N'est pas bloqué 0 | 1 est bloqué
 
@@ -114,5 +115,15 @@ public class Utilisateur
     public void setIdUtilisateur ( int idUtilisateur )
     {
         this.idUtilisateur = idUtilisateur;
+    }
+
+    public String getTel ( )
+    {
+        return tel;
+    }
+
+    public void setTel ( String tel )
+    {
+        this.tel = tel;
     }
 }

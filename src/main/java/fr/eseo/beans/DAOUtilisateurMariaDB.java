@@ -21,8 +21,72 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
             e.printStackTrace();
         }
     }
+
     @Override
-    public List <Utilisateur> listerUtilisateurs() {
+    public void suprimerUtilisateur ( Utilisateur utilisateur )
+    {
+        try (Connection connexion = daoFactory.getConnection() ;
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "DELETE FROM utilisateurs WHERE adresse = ?;")){
+            preparedStatement.setString(1, utilisateur.getAdresse ());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void modifierUtilisateur ( Utilisateur utilisateur )
+    {
+        try (Connection connexion = daoFactory.getConnection() ;
+             PreparedStatement preparedStatement = connexion.prepareStatement(
+                     "UPDATE utilisateurs SET nom=?, prenom=?, adresse=?, tel=? WHERE id=?;")){
+            preparedStatement.setString(1, utilisateur.getNom ());
+            preparedStatement.setString(2, utilisateur.getPrenom ());
+            preparedStatement.setString(3, utilisateur.getAdresse ());
+            preparedStatement.setString(4, utilisateur.getTel ());
+            preparedStatement.setString(5, Integer.toString ( utilisateur.getIdUtilisateur ()));
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public Utilisateur recupUtilisateur ( String adresseU, String mdpU )
+    {
+        Utilisateur utilisateur = new Utilisateur (  );
+        try (Connection connexion = daoFactory.getConnection() ;
+             Statement statement = connexion.createStatement() ;
+             ResultSet resultat = statement.executeQuery(
+                     "SELECT idUtilisateur,nom, prenom, tel, pseudo, anniversasire,isAdmin,isBloque FROM utilisateurs WHERE adresse = adresseU AND mdp = mdpU;")) {
+            while (resultat.next()) {
+                int idUtilisateur = resultat.getInt ("idUtilisateur");
+                String nom = resultat.getString("nom");
+                String prenom = resultat.getString("prenom");
+                String pseudo = resultat.getString("pseudo");
+                String anniversasire = resultat.getString("anniversasire");
+                boolean isAdmin = resultat.getBoolean("isAdmin");
+                boolean isBloque = resultat.getBoolean ("isBloque");
+                String tel = resultat.getString("tel");
+                utilisateur.setNom ( nom );
+                utilisateur.setPrenom ( prenom );
+                utilisateur.setIdUtilisateur ( idUtilisateur );
+                utilisateur.setPseudo ( pseudo );
+                utilisateur.setAnniversaire ( anniversasire );
+                utilisateur.setAdmin ( isAdmin );
+                utilisateur.setBloque (isBloque);
+                utilisateur.setTel (tel);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return utilisateur;
+    }
+
+
+    @Override
+    public List <Utilisateur> listerUtilisateurs ( ) {
         List<Utilisateur> annuaire = new ArrayList <> ();
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;

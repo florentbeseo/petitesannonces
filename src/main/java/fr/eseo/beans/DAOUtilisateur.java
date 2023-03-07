@@ -6,5 +6,5 @@ public interface DAOUtilisateur
 {
     void ajouterUtilisateur(Utilisateur utilisateur);
 
-    List <Utilisateur> listerUtilisateurs ( );
+    List <Utilisateur> listerUtilisateurs ();
 }

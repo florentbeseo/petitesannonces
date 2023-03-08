@@ -60,14 +60,14 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT idUtilisateur, ind, nom, prenom, tel, pseudo, anniversasire,isAdmin,isBloque FROM utilisateurs WHERE adresse = adresseU AND mdp = mdpU;")) {
+                     "SELECT idUtilisateur, ind, nom, prenom, tel, pseudo, anniversaire,isAdmin,isBloque FROM utilisateurs WHERE adresse = adresseU AND mdp = mdpU;")) {
             while (resultat.next()) {
                 int idUtilisateur = resultat.getInt ("idUtilisateur");
                 int ind = resultat.getInt ("ind");
                 String nom = resultat.getString("nom");
                 String prenom = resultat.getString("prenom");
                 String pseudo = resultat.getString("pseudo");
-                String anniversasire = resultat.getString("anniversasire");
+                String anniversaire = resultat.getString("anniversaire");
                 boolean isAdmin = resultat.getBoolean("isAdmin");
                 boolean isBloque = resultat.getBoolean ("isBloque");
                 String tel = resultat.getString("tel");
@@ -76,7 +76,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 utilisateur.setPrenom ( prenom );
                 utilisateur.setIdUtilisateur ( idUtilisateur );
                 utilisateur.setPseudo ( pseudo );
-                utilisateur.setAnniversaire ( anniversasire );
+                utilisateur.setAnniversaire ( anniversaire );
                 utilisateur.setAdmin ( isAdmin );
                 utilisateur.setBloque (isBloque);
                 utilisateur.setTel (tel);

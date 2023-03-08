@@ -4,6 +4,7 @@ public class Utilisateur
 {
     //attributs
     private int idUtilisateur;  //Id de l'utilisateur
+    private int ind = 0;            //Indexe de satisfaction de l'utilisateur
     private String pseudo;      //Pseudonyme de l'utilisateur
     private String adresse;     //Adresse mail de l'utilisateur
     private String mdp;         //Mot de passe de l'utilisateur
@@ -11,8 +12,8 @@ public class Utilisateur
     private String prenom;      //Prénom de l'utilisateur
     private String anniversaire;//Date d'anniversaire format aa/mm/jj
     private String tel;         //Téléphone de l'utilisateur
-    private boolean isAdmin;    //N'est pas admin  0 | 1 est admin
-    private boolean isBloque;   //N'est pas bloqué 0 | 1 est bloqué
+    private boolean isAdmin = false;    //N'est pas admin  0 | 1 est admin
+    private boolean isBloque = false;   //N'est pas bloqué 0 | 1 est bloqué
 
     //constructeur
     public Utilisateur()
@@ -125,5 +126,15 @@ public class Utilisateur
     public void setTel ( String tel )
     {
         this.tel = tel;
+    }
+
+    public int getInd ( )
+    {
+        return ind;
+    }
+
+    public void setInd ( int ind )
+    {
+        this.ind = ind;
     }
 }

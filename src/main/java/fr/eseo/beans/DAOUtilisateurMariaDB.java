@@ -40,12 +40,13 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "UPDATE utilisateurs SET nom=?, prenom=?, adresse=?, tel=? WHERE id=?;")){
+                     "UPDATE utilisateurs SET nom=?, prenom=?, adresse=?, tel=?,ind=? WHERE id=?;")){
             preparedStatement.setString(1, utilisateur.getNom ());
             preparedStatement.setString(2, utilisateur.getPrenom ());
             preparedStatement.setString(3, utilisateur.getAdresse ());
             preparedStatement.setString(4, utilisateur.getTel ());
-            preparedStatement.setString(5, Integer.toString ( utilisateur.getIdUtilisateur ()));
+            preparedStatement.setString(5, Integer.toString ( utilisateur.getInd ()));
+            preparedStatement.setString(6, Integer.toString ( utilisateur.getIdUtilisateur ()));
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,9 +60,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT idUtilisateur,nom, prenom, tel, pseudo, anniversasire,isAdmin,isBloque FROM utilisateurs WHERE adresse = adresseU AND mdp = mdpU;")) {
+                     "SELECT idUtilisateur, ind, nom, prenom, tel, pseudo, anniversasire,isAdmin,isBloque FROM utilisateurs WHERE adresse = adresseU AND mdp = mdpU;")) {
             while (resultat.next()) {
                 int idUtilisateur = resultat.getInt ("idUtilisateur");
+                int ind = resultat.getInt ("ind");
                 String nom = resultat.getString("nom");
                 String prenom = resultat.getString("prenom");
                 String pseudo = resultat.getString("pseudo");
@@ -70,6 +72,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 boolean isBloque = resultat.getBoolean ("isBloque");
                 String tel = resultat.getString("tel");
                 utilisateur.setNom ( nom );
+                utilisateur.setInd ( ind );
                 utilisateur.setPrenom ( prenom );
                 utilisateur.setIdUtilisateur ( idUtilisateur );
                 utilisateur.setPseudo ( pseudo );

@@ -10,6 +10,6 @@ import java.io.IOException;
 public class Inscription implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur) throws ServletException, IOException {
-        forward(request,response,"jsp/index.jsp");
+        forward(request,response,"jsp/page_inscription.jsp"); // a modifier lorsque la page d'acceuil sera faite
     }
 }

@@ -11,10 +11,14 @@ public class DAOFactory
     private String username;
     private String password;
     private DAOFactory () {}
-    public static DAOFactory getInstance() {
-        if(DAOFactory.instance == null) {
-            synchronized(DAOFactory.class) {
-                if(DAOFactory.instance == null) {
+    public static DAOFactory getInstance()
+    {
+        if(DAOFactory.instance == null)
+        {
+            synchronized(DAOFactory.class)
+            {
+                if(DAOFactory.instance == null)
+                {
                     instance = new DAOFactory();
                 }
             }
@@ -25,7 +29,8 @@ public class DAOFactory
     {
         return DriverManager.getConnection(url, username, password);
     }
-    private void setParamMariaDB(String url, String username, String password) {
+    private void setParamMariaDB(String url, String username, String password)
+    {
         this.url = url;
         this.username = username;
         this.password = password;
@@ -35,10 +40,12 @@ public class DAOFactory
             e.printStackTrace();
         }
     }
-    public DAOUtilisateur getUtilisateurDao(String type) {
-        switch(type) {
+    public DAOUtilisateur getUtilisateurDao(String type)
+    {
+        switch(type)
+        {
             case "MariaDB":
-                setParamMariaDB("jdbc:mariadb://localhost:3306/liste", "root", "maria");
+                setParamMariaDB("jdbc:mariadb://localhost:3306/petiteannonce", "root", "maria");
                 return new DAOUtilisateurMariaDB(this);
             default:
                 return null;

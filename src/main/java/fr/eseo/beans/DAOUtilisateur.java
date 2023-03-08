@@ -9,5 +9,5 @@ public interface DAOUtilisateur
     void modifierUtilisateur(Utilisateur utilisateur);
     Utilisateur recupUtilisateur(String adresse,String mdp);
 
-    List <Utilisateur> listerUtilisateurs ();
+    List <Utilisateur> listerUtilisateurs (); // inutile mais source d'inspiration
 }

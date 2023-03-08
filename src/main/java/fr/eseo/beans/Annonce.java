@@ -8,7 +8,7 @@ public class Annonce
     private String extra;           //Cas du €/heure ou /items etc...
     private String descriptif;      //Description de l'annonce
     //private String etat;          //Renseigne l'état structurelle du biens neuf|intacte|usé|abimé|cassé|enPoudre
-    private Utilisateur vendeur;    //L'utilisateur qui publie l'annonce
+    private int vendeur;            //L'idUtilisateur qui publie l'annonce
     private boolean categorie;      //Biens  0 | 1  Services
     private boolean isVisible;      //Si l'annonce est visible ou pas
     private boolean isFini;         //Si l'annonce est fini
@@ -57,12 +57,12 @@ public class Annonce
         this.descriptif = descriptif;
     }
 
-    public Utilisateur getVendeur ( )
+    public int getVendeur ( )
     {
         return vendeur;
     }
 
-    public void setVendeur ( Utilisateur vendeur )
+    public void setVendeur ( int vendeur )
     {
         this.vendeur = vendeur;
     }
@@ -96,4 +96,6 @@ public class Annonce
     {
         isFini = fini;
     }
+
+
 }

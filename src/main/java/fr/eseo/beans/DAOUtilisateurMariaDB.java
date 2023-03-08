@@ -10,10 +10,12 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         this.daoFactory = daoFactory;
     }
     @Override
-    public void ajouterUtilisateur(Utilisateur utilisateur) {
+    public void ajouterUtilisateur(Utilisateur utilisateur)
+    {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "INSERT INTO utilisateurs(pseudo, mdp) VALUES(?, ?);")){
+                     "INSERT INTO utilisateur(pseudo, mdp) VALUES(?, ?);"))
+        {
             preparedStatement.setString(1, utilisateur.getPseudo ());
             preparedStatement.setString(2, utilisateur.getMdp());
             preparedStatement.executeUpdate();
@@ -27,10 +29,12 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "DELETE FROM utilisateurs WHERE adresse = ?;")){
+                     "DELETE FROM utilisateur WHERE adresse = ?;"))
+        {
             preparedStatement.setString(1, utilisateur.getAdresse ());
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
     }
@@ -40,7 +44,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "UPDATE utilisateurs SET nom=?, prenom=?, adresse=?, tel=?,ind=? WHERE id=?;")){
+                     "UPDATE utilisateur SET nom=?, prenom=?, adresse=?, tel=?,ind=? WHERE id=?;")){
             preparedStatement.setString(1, utilisateur.getNom ());
             preparedStatement.setString(2, utilisateur.getPrenom ());
             preparedStatement.setString(3, utilisateur.getAdresse ());
@@ -48,7 +52,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
             preparedStatement.setString(5, Integer.toString ( utilisateur.getInd ()));
             preparedStatement.setString(6, Integer.toString ( utilisateur.getIdUtilisateur ()));
             preparedStatement.executeUpdate();
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
     }
@@ -60,8 +65,9 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT idUtilisateur, ind, nom, prenom, tel, pseudo, anniversaire,isAdmin,isBloque FROM utilisateurs WHERE adresse = adresseU AND mdp = mdpU;")) {
-            while (resultat.next()) {
+                     "SELECT idUtilisateur, ind, nom, prenom, tel, pseudo, anniversaire,isAdmin,isBloque FROM utilisateur WHERE adresse = adresseU AND mdp = mdpU;")) {
+            while (resultat.next())
+            {
                 int idUtilisateur = resultat.getInt ("idUtilisateur");
                 int ind = resultat.getInt ("ind");
                 String nom = resultat.getString("nom");
@@ -81,7 +87,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 utilisateur.setBloque (isBloque);
                 utilisateur.setTel (tel);
             }
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         return utilisateur;
@@ -111,8 +118,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT nom, prenom FROM utilisateurs;")) {
-            while (resultat.next()) {
+                     "SELECT nom, prenom FROM utilisateur;"))
+        {
+            while (resultat.next())
+            {
                 String adresse = resultat.getString("adresse");
                 String mdp = resultat.getString("mdp");
                 Utilisateur utilisateur = new Utilisateur();
@@ -120,7 +129,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 utilisateur.setMdp(mdp);
                 annuaire.add(utilisateur);
             }
-        } catch (SQLException e) {
+        } catch (SQLException e)
+        {
             e.printStackTrace();
         }
         return annuaire;

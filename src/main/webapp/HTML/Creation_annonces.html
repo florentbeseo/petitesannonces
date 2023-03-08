@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Création annonces</title>
+  <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+<body>
+<header>
+  <h1>Créations d'une annonces</h1>
+</header>
+<main>
+  <section>
+    <h2>Déposer une annonce</h2>
+    <form>
+      <label for="titre">Titre de l'annonce :</label>
+      <input type="text" id="titre" name="titre" required>
+      <label for="description">Description de l'annonce :</label>
+      <textarea id="description" name="description" rows="5" required></textarea>
+      <label for="prix">Prix :</label>
+      <input type="number" id="prix" name="prix" required>
+      <label for="ville">Ville :</label>
+      <input type="text" id="ville" name="ville" required>
+      <input type="submit" value="Déposer l'annonce">
+    </form>
+  </section>
+  <section>
+    <h2>Annonces récentes</h2>
+    <ul>
+      <li>
+        <h3>Titre de l'annonce</h3>
+        <p>Description de l'annonce</p>
+        <p>Prix : 100€</p>
+        <p>Ville : Paris</p>
+      </li>
+      <li>
+        <h3>Titre de l'annonce</h3>
+        <p>Description de l'annonce</p>
+        <p>Prix : 50€</p>
+        <p>Ville : Marseille</p>
+      </li>
+    </ul>
+  </section>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>

@@ -15,7 +15,7 @@
 </head>
 <body>
     <h2>Connections</h2><br>
-    <form class="login" method='POST' action='servlet/action/Connexion.java'>
+    <form class="login" method='POST' action='Controller?id=connection'>
         <label><b>Nom d'utilisateur
         </b>
         </label>
@@ -25,19 +25,13 @@
         </b>
         </label>
         <input type="Password" name="Mdp" id="Mdp" placeholder="Password">
-
         <br><br>
-        <input type="button" name="log" id="log" value="Se connecter">
+        <input type="submit" name="log" id="log" value="Se connecter">
         <br><br>
         <input type="checkbox" id="check">
         <span>Se rappeler de moi.</span>
         <br><br>
-        <%-- </form> --%>
     </form>
-    <div class="message_erreur">
-        <a href="jsp/index.jsp" id="test">TEST</a>
-        <p id="message_erreur_connexion">Erreur de connexion</p>
-        <p id="message_erreur_noconnexion">Impossible de se connecter</p>
-    </div>
+    <a href="Controller?id=inscription">Inscription</a>
 </body>
 </html>

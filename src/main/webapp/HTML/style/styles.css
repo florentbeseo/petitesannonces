@@ -2,11 +2,11 @@ body
 {
     margin: 0;
     padding: 0;
-    background-color:black;
+    background-color:grey;
     font-family: 'Arial';
 }
 .login{
-    width: 382px;
+    width: 430px;
     overflow: hidden;
     margin: auto;
     padding: 80px;
@@ -19,9 +19,12 @@ h2{
     color: #277582;
     padding: 20px;
 }
+
 label{
-    color: lightcyan;
     font-size: 17px;
+    display: block;
+    margin-bottom: 10px;
+    color: black;
 }
 #Uname{
     width: 300px;
@@ -30,13 +33,47 @@ label{
     border-radius: 3px;
     padding-left: 8px;
 }
-#Pass{
+#Mdp{
     width: 300px;
     height: 30px;
     border: none;
     border-radius: 3px;
     padding-left: 8px;
-
+}
+#name{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#pseudo{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#mail{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#date{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+#tel  {
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
 }
 #log{
     width: 300px;
@@ -44,7 +81,8 @@ label{
     border: none;
     border-radius: 17px;
     padding-left: 7px;
-    color: black;
+    color: white;
+    background-color: darkblue;
 
 
 }
@@ -57,6 +95,70 @@ a{
     background-color: grey;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+section {
+    flex-basis: 45%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+form {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+input[type="text"], textarea, input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 0 3px #ccc;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 3px #ccc;
+}
 #message_erreur_connexion, #message_erreur_noconnexion{
     color: white;
     text-align: center;

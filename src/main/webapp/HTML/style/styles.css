@@ -90,10 +90,6 @@ span{
     color: white;
     font-size: 17px;
 }
-a{
-    float: right;
-    background-color: grey;
-}
 
 * {
     box-sizing: border-box;
@@ -159,11 +155,8 @@ li {
     margin-bottom: 20px;
     box-shadow: 0 0 3px #ccc;
 }
-#message_erreur_connexion, #message_erreur_noconnexion{
-    color: white;
+a{
+    /*float: right;*/
+    color: #277582;
     text-align: center;
-}
-
-#test{
-    color: red;
 }

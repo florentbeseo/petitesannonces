@@ -4,6 +4,7 @@ import fr.eseo.beans.DAOFactory;
 import fr.eseo.beans.DAOUtilisateur;
 import fr.eseo.servlet.action.Action;
 import fr.eseo.servlet.action.Connexion;
+import fr.eseo.servlet.action.Inscription;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -21,8 +22,8 @@ public class  Controller extends HttpServlet {
     public void init() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         daoutilisateur = daoFactory.getUtilisateurDao("MariaDB");
-        actionMap.put("connexion", new Connexion());
-
+        actionMap.put("connection", new Connexion());
+        actionMap.put("inscription", new Inscription());
     }
 
     @Override
@@ -39,13 +40,13 @@ public class  Controller extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
         if(id == null) {
-            id="connexion";
+            id="connection";
         }
         Action action = actionMap.get(id);
         if(action != null) {
             action.execute(request, response, daoutilisateur);
         } else {
-            actionMap.get("connexion").execute(request, response, daoutilisateur);
+            new Exception();
         }
     }
 }

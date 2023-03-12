@@ -94,24 +94,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         return utilisateur;
     }
 
-    /*
-    @Override
-    public boolean isExist (String utilisaeur, String motPasse){
-        boolean login = false;
-        try (Connection connexion = daoFactory.getConnection();
-             PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "SELECT * FROM login WHERE user=?;")) {
-            preparedStatement.setString(1, utilisaeur);
-            ResultSet resultat = preparedStatement.executeQuery();
-            if(resultat.next()) {
-                //login = BCrypt.checkpw(motPasse, resultat.getString("password"));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return login;
-    }*/
-
     @Override
     public List <Utilisateur> listerUtilisateurs ( ) {
         List<Utilisateur> annuaire = new ArrayList <> ();

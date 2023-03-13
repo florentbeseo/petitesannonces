@@ -23,7 +23,9 @@ public class Inscription implements Action{
         String mdp = request.getParameter("mdp");
 
         List<Utilisateur> liste_utilisateur = daoutilisateur.listerUtilisateurs();
-        System.out.println("telephone: "+telephone);
+        for (int i=0; i<liste_utilisateur.size(); i++){
+            System.out.println("Le nom de l'utilisateur est: "+liste_utilisateur.get(i).getPrenom());
+        }
 
         //boolean champ_rempli = false;
         boolean ok = false;
@@ -38,8 +40,7 @@ public class Inscription implements Action{
                                     boolean etat_telephone = verificattion_telephone(telephone, request);
                                     //boolean etat_mail = verification_mail(mail, request, liste_utilisateur);
                                     if(/*etat_mail == true &&*/ etat_age == true && etat_telephone == true) {
-                                        HttpSession session = request.getSession();
-                                        session.setAttribute("pseudo", pseudo);
+                                        transmissionAttribut(request, pseudo);
                                         forward(request, response, "jsp/page_profil.jsp");
                                     }
                                 }
@@ -137,5 +138,10 @@ public class Inscription implements Action{
         }
 
         return etat_telephone;
+    }
+
+    private void transmissionAttribut (HttpServletRequest request, String pseudo) {
+        HttpSession session = request.getSession();
+        session.setAttribute("pseudo", pseudo);
     }
 }

@@ -2,10 +2,7 @@ package fr.eseo.servlet;
 
 import fr.eseo.beans.DAOFactory;
 import fr.eseo.beans.DAOUtilisateur;
-import fr.eseo.servlet.action.Action;
-import fr.eseo.servlet.action.Connexion;
-import fr.eseo.servlet.action.Creation_Annonce;
-import fr.eseo.servlet.action.Inscription;
+import fr.eseo.servlet.action.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -25,7 +22,8 @@ public class  Controller extends HttpServlet {
         daoutilisateur = daoFactory.getUtilisateurDao("MariaDB");
         actionMap.put("connection", new Connexion());
         actionMap.put("inscription", new Inscription());
-        actionMap.put("creation_annonce",new Creation_Annonce());
+        actionMap.put("creation_annonce", new Creation_Annonce());
+        actionMap.put("profil", new Profil());
     }
 
     @Override

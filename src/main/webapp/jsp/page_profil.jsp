@@ -14,6 +14,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <p>Voici le profile de ${sessionScope.pseudo}</p>
+    <h2>Profil de ${sessionScope.pseudo}</h2><br>
 </body>
 </html>

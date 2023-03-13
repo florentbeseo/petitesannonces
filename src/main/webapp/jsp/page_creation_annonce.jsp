@@ -32,16 +32,16 @@
         <h2>Annonces récentes</h2>
         <ul>
             <li>
-                <h3>Titre de l'annonce</h3>
-                <p>Description de l'annonce</p>
-                <p>Prix : 100€</p>
-                <p>Ville : Paris</p>
+                <h3><%-- ${sessionScope.titre_annonce1} --%></h3>
+                <p><%-- ${sessionScope.description_annonce1} --%></p>
+                <p>Prix : <%-- ${sessionScope.prix_annonce_recent1} --%></p>
+                <p>Ville : <%-- ${sessionScope.ville_annonce_recente1} --%></p>
             </li>
             <li>
-                <h3>Titre de l'annonce</h3>
-                <p>Description de l'annonce</p>
-                <p>Prix : 50€</p>
-                <p>Ville : Marseille</p>
+                <h3><%-- ${sessionScope.titre_annonce2} --%></h3>
+                <p><%-- ${sessionScope.description_annonce2} --%></p>
+                <p>Prix : <%-- ${sessionScope.prix_annonce_recent2} --%></p>
+                <p>Ville : <%-- ${sessionScope.ville_annonce_recente2} --%></p>
             </li>
         </ul>
     </section>

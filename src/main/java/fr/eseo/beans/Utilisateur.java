@@ -25,6 +25,16 @@ public class Utilisateur
         this.adresse = adresse;
         this.mdp = mdp;
     }
+    public Utilisateur(String pseudo, String adresse, String mdp, String nom, String prenom, String anniversaire, String tel)
+    {
+        this.pseudo = pseudo;
+        this.adresse = adresse;
+        this.mdp = mdp;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.anniversaire = anniversaire;
+        this.tel = tel;
+    }
 
     //getters setters
 

@@ -14,10 +14,17 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "INSERT INTO utilisateur(pseudo, mdp) VALUES(?, ?);"))
+                     "INSERT INTO utilisateur(pseudo,adresse,mdp,nom,prenom,anniversaire,tel,isAdmin,isBloque) VALUES(?,?,?,?,?,?,?,?,?);"))
         {
             preparedStatement.setString(1, utilisateur.getPseudo ());
-            preparedStatement.setString(2, utilisateur.getMdp());
+            preparedStatement.setString(2, utilisateur.getAdresse ());
+            preparedStatement.setString(3, utilisateur.getMdp ());
+            preparedStatement.setString(4, utilisateur.getNom ());
+            preparedStatement.setString(5, utilisateur.getPrenom ());
+            preparedStatement.setString(6, utilisateur.getAnniversaire ());
+            preparedStatement.setString(7, utilisateur.getTel ());
+            preparedStatement.setString(8, Boolean.toString ( utilisateur.isAdmin() ));
+            preparedStatement.setString(9, Boolean.toString ( utilisateur.isBloque() ));
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

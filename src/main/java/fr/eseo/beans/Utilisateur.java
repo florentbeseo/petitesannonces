@@ -1,6 +1,6 @@
 package fr.eseo.beans;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Utilisateur
 {
@@ -12,7 +12,7 @@ public class Utilisateur
     private String mdp;         //Mot de passe de l'utilisateur
     private String nom;         //Nom de l'utilisateur
     private String prenom;      //Prénom de l'utilisateur
-    private java.sql.Date anniversaire;//Date d'anniversaire format aa/mm/jj
+    private Date anniversaire ;//Date d'anniversaire format aa/mm/jj
     private String tel;         //Téléphone de l'utilisateur
     private boolean isAdmin = false;    //N'est pas admin  0 | 1 est admin
     private boolean isBloque = false;   //N'est pas bloqué 0 | 1 est bloqué
@@ -27,7 +27,7 @@ public class Utilisateur
         this.adresse = adresse;
         this.mdp = mdp;
     }
-    public Utilisateur( String pseudo, String adresse, String mdp, String nom, String prenom, java.sql.Date anniversaire, String tel)
+    public Utilisateur(String pseudo, String adresse, String mdp, String nom, String prenom, Date anniversaire, String tel)
     {
         this.ind = 0;
         this.pseudo = pseudo;

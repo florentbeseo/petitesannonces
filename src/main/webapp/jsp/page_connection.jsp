@@ -17,7 +17,7 @@
     <h2>Connections</h2><br>
     <form class="login" method='POST' action='Controller?id=connection'>
         <label><b>Nom d'utilisateur</b></label>
-        <input type="text" name="Nu" id="Nu" placeholder="Username">
+        <input type="email" name="Nu" id="Nu" placeholder="Username">
         <br><br>
         <label><b>Mot de passe</b></label>
         <input type="Password" name="Mdp" id="Mdp" placeholder="Password">

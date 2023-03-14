@@ -19,7 +19,7 @@
         <li><a href="Controller?id=accueil">Nom du site</a></li>
         <li><a href="Controller?id=accueil_biens">Biens</a></li>
         <li><a href="Controller?id=accueil_services">Service</a></li>
-        <li><a href="Controller?id=profile" >Profile</a></li>
+        <li><a href="Controller?id=profile" >${sessionScope.mail}</a></li>
         <li><a href="Controller?id=aide" >Aide</a></li>
     </ul>
 </body>

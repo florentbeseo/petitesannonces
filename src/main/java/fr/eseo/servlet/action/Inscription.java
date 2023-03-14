@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Inscription implements Action{
@@ -18,12 +22,13 @@ public class Inscription implements Action{
         String prenom = request.getParameter("prenom");
         String pseudo = request.getParameter("pseudo");
         String mail = request.getParameter("mail");
-        String date_naissance = request.getParameter("date");
+        String anniversaire = request.getParameter("date");
         String telephone = request.getParameter("telephone");
         String mdp = request.getParameter("mdp");
 
         List<Utilisateur> liste_utilisateur = daoutilisateur.listerUtilisateurs();
-        for (int i=0; i<liste_utilisateur.size(); i++){
+        for (int i=0; i<liste_utilisateur.size(); i++)
+        {
             System.out.println("Le nom de l'utilisateur est: "+liste_utilisateur.get(i).getPrenom());
         }
 
@@ -33,18 +38,19 @@ public class Inscription implements Action{
             if(prenom != null && !prenom.equals("")) {
                 if(pseudo != null && !pseudo.equals("")){
                     if(mail != null && !mail.equals("")){
-                        if(date_naissance != null && !date_naissance.equals("")){
+                        if(anniversaire != null && !anniversaire.equals("")){
+                            Date anniversaire_reel = Date.valueOf(anniversaire);
                             if(telephone != null && !telephone.equals("")){
                                 if(mdp != null && !mdp.equals("")){
-                                    boolean etat_age = verification_age(date_naissance, request);
-                                    boolean etat_telephone = verificattion_telephone(telephone, request);
+                                    //boolean etat_age = verification_age(anniversaire, request);
+                                    //boolean etat_telephone = verificattion_telephone(telephone, request);
                                     //boolean etat_mail = verification_mail(mail, request, liste_utilisateur);
-                                    if(/*etat_mail == true &&*/ etat_age == true && etat_telephone == true) {
-                                        /*Utilisateur utilisateur = new Utilisateur(mail, mdp);
-                                        daoutilisateur.ajouterUtilisateur(utilisateur);*/
+                                    //if(/*etat_mail == true &&*/ etat_age == true && etat_telephone == true) {
+                                        Utilisateur utilisateur = new Utilisateur(pseudo, mail, mdp, nom, prenom, anniversaire_reel, telephone);
+                                        daoutilisateur.ajouterUtilisateur(utilisateur);
                                         transmissionAttribut(request, mail);
                                         forward(request, response, "jsp/page_acceuil.jsp");
-                                    }
+                                    //}
                                 }
                                 else{
                                     request.setAttribute("error", true);

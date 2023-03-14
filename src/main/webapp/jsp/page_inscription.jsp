@@ -33,7 +33,7 @@
         <input type="date" name="date" id="date" placeholder="Date ">
         <br><br>
         <label><b>Telephone :</b></label>
-        <input type="number" name="telephone" id="tel" placeholder="Tel  ">
+        <input type="text" name="telephone" id="tel" placeholder="Tel  ">
         <br><br>
         <label><b>Mot de passe :</b></label>
         <input type="password" name="mdp" id="Pass" placeholder="Mot de passe   ">

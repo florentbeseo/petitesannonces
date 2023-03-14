@@ -17,13 +17,14 @@ public class Connection implements Action
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur) throws ServletException, IOException
     {
 
-        String Pseudo_utilisateur = request.getParameter("Nu");
-        String motPasse = request.getParameter("Mdp");
+        String mail = request.getParameter("Nu");
+        String mdp = request.getParameter("Mdp");
         List<Utilisateur> liste_utilisateur = daoutilisateur.listerUtilisateurs();
 
+        System.out.println("Taille liste: "+liste_utilisateur.size());
         for (int j=0; j<liste_utilisateur.size(); j++)
         {
-            System.out.println("Pour le bougue "+j+" le pseudo est: "+liste_utilisateur.get(j).getPseudo());
+            System.out.println("Pour le bougue "+j+" le pseudo est: "+liste_utilisateur.get(j).getAdresse());
         }
 
         //boolean champ_rempli = false;
@@ -31,12 +32,12 @@ public class Connection implements Action
         {
             if(request.getParameter("Mdp") != null && !request.getParameter("Mdp").equals(""))
             {
-                boolean existe = true;
+                boolean existe = false;
                 for (int i = 0; i < liste_utilisateur.size(); i++)
                 {
-                    if (liste_utilisateur.get(i).getPseudo() == Pseudo_utilisateur)
+                    if (liste_utilisateur.get(i).getAdresse() == mail)
                     {
-                        if (liste_utilisateur.get(i).getMdp() == motPasse)
+                        if (liste_utilisateur.get(i).getMdp() == mdp)
                         {
                             existe = true;
                         }
@@ -44,6 +45,8 @@ public class Connection implements Action
                 }
                 if (existe == true)
                 {
+                    HttpSession session = request.getSession();
+                    session.setAttribute("mail", mail);
                     forward(request, response, "jsp/page_acceuil.jsp");
                 }
             }
@@ -60,7 +63,7 @@ public class Connection implements Action
         if(champ_rempli == true) {
             for (int i = 0; i < liste.size(); i++) {
                 if (liste.get(i).getPseudo() == Pseudo_utilisateur) {
-                    if (liste.get(i).getMdp() == motPasse) {
+                    if (liste.get(i).getMdp() == mdp) {
                         existe = true;
                     }
                 }                                                               //piste pour apres avoir regler le proleme du double lancement

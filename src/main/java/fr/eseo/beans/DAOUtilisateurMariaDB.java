@@ -21,10 +21,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
             preparedStatement.setString(3, utilisateur.getMdp ());
             preparedStatement.setString(4, utilisateur.getNom ());
             preparedStatement.setString(5, utilisateur.getPrenom ());
-            preparedStatement.setString(6, utilisateur.getAnniversaire ());
+            preparedStatement.setDate(6, utilisateur.getAnniversaire ());
             preparedStatement.setString(7, utilisateur.getTel ());
-            preparedStatement.setString(8, Boolean.toString ( utilisateur.isAdmin() ));
-            preparedStatement.setString(9, Boolean.toString ( utilisateur.isBloque() ));
+            preparedStatement.setBoolean(8, utilisateur.isAdmin());
+            preparedStatement.setBoolean(9, utilisateur.isBloque());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -80,7 +80,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 String nom = resultat.getString("nom");
                 String prenom = resultat.getString("prenom");
                 String pseudo = resultat.getString("pseudo");
-                String anniversaire = resultat.getString("anniversaire");
+                java.sql.Date anniversaire = resultat.getDate("anniversaire");
                 boolean isAdmin = resultat.getBoolean("isAdmin");
                 boolean isBloque = resultat.getBoolean ("isBloque");
                 String tel = resultat.getString("tel");

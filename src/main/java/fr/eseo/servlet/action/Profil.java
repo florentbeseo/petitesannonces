@@ -22,7 +22,7 @@ public class Profil implements Action{
         String nom = utilisateur.getNom();
         String prenom = utilisateur.getPrenom();
         String pseudo = utilisateur.getPseudo();
-        String date_naissance = utilisateur.getAnniversaire();
+        java.sql.Date date_naissance = utilisateur.getAnniversaire();
         String telephone = utilisateur.getTel();
 
         session.setAttribute("nom", mail);

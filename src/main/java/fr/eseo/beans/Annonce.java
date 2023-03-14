@@ -7,11 +7,13 @@ public class Annonce
     private float prix;             //Prix de l'annonce
     private String extra;           //Cas du €/heure ou /items etc...
     private String descriptif;      //Description de l'annonce
-    //private String etat;          //Renseigne l'état structurelle du biens neuf|intacte|usé|abimé|cassé|enPoudre
-    private int vendeur;            //L'idUtilisateur qui publie l'annonce
+    private String etat;            //Renseigne l'état structurelle du biens neuf|intacte|usé|abimé|cassé|enPoudre
+    private String img;             //nom de l'image de l'annonce
+    private String type;            //véhicule|mobilier|exterieur|sport|animalier|numerique|Loisir|travail
     private boolean categorie;      //Biens  0 | 1  Services
     private boolean isVisible;      //Si l'annonce est visible ou pas
     private boolean isFini;         //Si l'annonce est fini
+    private int vendeur;            //L'idUtilisateur qui publie l'annonce
     //Constructeurs
 
     //Getters setters
@@ -97,5 +99,33 @@ public class Annonce
         isFini = fini;
     }
 
+    public String getEtat ( )
+    {
+        return etat;
+    }
 
+    public void setEtat ( String etat )
+    {
+        this.etat = etat;
+    }
+
+    public String getImg ( )
+    {
+        return img;
+    }
+
+    public void setImg ( String img )
+    {
+        this.img = img;
+    }
+
+    public String getType ( )
+    {
+        return type;
+    }
+
+    public void setType ( String type )
+    {
+        this.type = type;
+    }
 }

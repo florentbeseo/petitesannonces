@@ -7,4 +7,5 @@ public interface DAOAnnonce
     void suprimerAnnonce ( Annonce annonce );
 
     void modifierAnnonce ( Annonce annonce );
+    public Annonce recupAnnonce(String typeA,Boolean categorieA);
 }

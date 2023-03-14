@@ -20,10 +20,13 @@ public class  Controller extends HttpServlet {
     public void init() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         daoutilisateur = daoFactory.getUtilisateurDao("MariaDB");
-        actionMap.put("connection", new Connexion());
-        actionMap.put("inscription", new Inscription());
-        actionMap.put("creation_annonce", new Creation_Annonce());
-        actionMap.put("profil", new Profil());
+        actionMap.put("connection",         new Connection ());
+        actionMap.put("inscription",        new Inscription());
+        actionMap.put("creation_annonce",   new Creation_Annonce());
+        actionMap.put("profil",             new Profil());
+        actionMap.put("aide",               new Aide());
+        actionMap.put("accueil_biens",      new Accueil_Biens ());
+        actionMap.put("accueil_services",   new Accueil_Services ());
     }
 
     @Override

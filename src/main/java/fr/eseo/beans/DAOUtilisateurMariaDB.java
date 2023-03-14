@@ -59,7 +59,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     }
 
     @Override
-    public Utilisateur recupUtilisateur ( /*String adresseU, String mdpU*/ )
+    public Utilisateur recupUtilisateur ( String adresseU, String mdpU )
     {
         Utilisateur utilisateur = new Utilisateur (  );
         try (Connection connexion = daoFactory.getConnection() ;

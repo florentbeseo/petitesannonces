@@ -40,8 +40,10 @@ public class Inscription implements Action{
                                     boolean etat_telephone = verificattion_telephone(telephone, request);
                                     //boolean etat_mail = verification_mail(mail, request, liste_utilisateur);
                                     if(/*etat_mail == true &&*/ etat_age == true && etat_telephone == true) {
-                                        transmissionAttribut(request, pseudo);
-                                        forward(request, response, "jsp/page_profil.jsp");
+                                        /*Utilisateur utilisateur = new Utilisateur(mail, mdp);
+                                        daoutilisateur.ajouterUtilisateur(utilisateur);*/
+                                        transmissionAttribut(request, mail);
+                                        forward(request, response, "jsp/page_acceuil.jsp");
                                     }
                                 }
                                 else{
@@ -140,8 +142,8 @@ public class Inscription implements Action{
         return etat_telephone;
     }
 
-    private void transmissionAttribut (HttpServletRequest request, String pseudo) {
+    private void transmissionAttribut (HttpServletRequest request, String mail) {
         HttpSession session = request.getSession();
-        session.setAttribute("pseudo", pseudo);
+        session.setAttribute("mail", mail);
     }
 }

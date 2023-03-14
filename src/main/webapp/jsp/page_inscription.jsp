@@ -52,7 +52,6 @@
     <c:if test="${!empty Telephone_error}">
         <p>Telephone invalide</p>
     </c:if>
-    <a href="Controller?id=creation_annonce">Page suivante</a>
 </body>
 
 </html>

@@ -23,10 +23,12 @@ public class  Controller extends HttpServlet {
         actionMap.put("connection",         new Connection ());
         actionMap.put("inscription",        new Inscription());
         actionMap.put("creation_annonce",   new Creation_Annonce());
-        actionMap.put("profil",             new Profil());
+        actionMap.put("profile",            new Profil());
         actionMap.put("aide",               new Aide());
         actionMap.put("accueil_biens",      new Accueil_Biens ());
         actionMap.put("accueil_services",   new Accueil_Services ());
+        actionMap.put("accueil",            new Accueil());
+        actionMap.put("accueil_temp",       new Accueil_temp());
     }
 
     @Override
@@ -43,7 +45,7 @@ public class  Controller extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
         if(id == null) {
-            id="connection";
+            id="accueil_temp";
         }
         Action action = actionMap.get(id);
         if(action != null) {

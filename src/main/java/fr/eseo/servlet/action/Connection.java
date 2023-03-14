@@ -10,34 +10,41 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-public class                                                                                                                                                                                                                                                                                                                                                                    Connection implements Action {
+public class Connection implements Action
+{
 
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur) throws ServletException, IOException
+    {
 
         String Pseudo_utilisateur = request.getParameter("Nu");
         String motPasse = request.getParameter("Mdp");
         List<Utilisateur> liste_utilisateur = daoutilisateur.listerUtilisateurs();
 
-        for (int j=0; j<liste_utilisateur.size(); j++){
+        for (int j=0; j<liste_utilisateur.size(); j++)
+        {
             System.out.println("Pour le bougue "+j+" le pseudo est: "+liste_utilisateur.get(j).getPseudo());
         }
 
-        boolean existe = true;
         //boolean champ_rempli = false;
-        if(request.getParameter("Nu") != null && !request.getParameter("Nu").equals("")) {
-            if(request.getParameter("Mdp") != null && !request.getParameter("Mdp").equals("")) {
-                for (int i = 0; i < liste_utilisateur.size(); i++) {
-                    if (liste_utilisateur.get(i).getPseudo() == Pseudo_utilisateur) {
-                        if (liste_utilisateur.get(i).getMdp() == motPasse) {
+        if(request.getParameter("Nu") != null && !request.getParameter("Nu").equals(""))
+        {
+            if(request.getParameter("Mdp") != null && !request.getParameter("Mdp").equals(""))
+            {
+                boolean existe = true;
+                for (int i = 0; i < liste_utilisateur.size(); i++)
+                {
+                    if (liste_utilisateur.get(i).getPseudo() == Pseudo_utilisateur)
+                    {
+                        if (liste_utilisateur.get(i).getMdp() == motPasse)
+                        {
                             existe = true;
                         }
                     }
                 }
-                if (existe == true) {
-                    HttpSession session = request.getSession();
-                    session.setAttribute("pseudo", Pseudo_utilisateur);
-                    forward(request, response, "jsp/page_profil.jsp");
+                if (existe == true)
+                {
+                    forward(request, response, "jsp/page_acceuil.jsp");
                 }
             }
             else{

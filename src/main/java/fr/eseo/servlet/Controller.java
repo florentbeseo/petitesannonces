@@ -29,6 +29,7 @@ public class  Controller extends HttpServlet {
         actionMap.put("accueil_services",   new Accueil_Services ());
         actionMap.put("accueil",            new Accueil());
         actionMap.put("accueil_temp",       new Accueil_temp());
+        actionMap.put("modification",       new Modification());
     }
 
     @Override

@@ -67,13 +67,13 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     }
 
     @Override
-    public Utilisateur recupUtilisateur ( String adresseU, String mdpU )
+    public Utilisateur recupUtilisateur ( String adresseU)
     {
         Utilisateur utilisateur = new Utilisateur (  );
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT idUtilisateur, ind, nom, prenom, tel, pseudo, anniversaire,isAdmin,isBloque FROM utilisateur WHERE adresse = adresseU AND mdp = mdpU;")) {
+                     "SELECT idUtilisateur, ind, nom, prenom, tel, pseudo, anniversaire,isAdmin,isBloque, adresse, mdp FROM utilisateur WHERE adresse ='"+adresseU+"' ;")) {
             while (resultat.next())
             {
                 int idUtilisateur = resultat.getInt ("idUtilisateur");
@@ -86,6 +86,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 boolean isAdmin = resultat.getBoolean("isAdmin");
                 boolean isBloque = resultat.getBoolean ("isBloque");
                 String tel = resultat.getString("tel");
+                String adresse = resultat.getString( "adresse");
+                String mdp = resultat.getString( "mdp");
                 utilisateur.setNom ( nom );
                 utilisateur.setInd ( ind );
                 utilisateur.setPrenom ( prenom );
@@ -95,6 +97,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 utilisateur.setAdmin ( isAdmin );
                 utilisateur.setBloque (isBloque);
                 utilisateur.setTel (tel);
+                utilisateur.setAdresse( adresse );
+                utilisateur.setMdp( mdp );
             }
         } catch (SQLException e)
         {

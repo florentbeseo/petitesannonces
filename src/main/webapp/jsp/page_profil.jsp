@@ -23,29 +23,28 @@
         <li><a href="" >Profil</a></li>
         <li><a href="" >Aide</a></li>
     </ul> --%>
-    <div class="login" method="POST" action="Controller?id=profil">
-        <label><b>Nom de famille :</b></label>
-        <p type="text" name="nom" id="Uname">${sessionScope.nom}</p>
-        <br><br>
-        <%-- <label><b>Prenom :</b></label>
-        <input type="text" name="prenom" id="name" placeholder="Prenom">
-        <br><br>
-        <label><b>Pseudo :</b></label>
-        <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo ">
-        <br><br>
-        <label><b>Mail personnel :</b></label>
-        <input type="email" name="mail" id="mail" placeholder="Mail ">
-        <br><br>
-        <label><b>Date de naissance :</b></label>
-        <input type="date" name="date" id="date" placeholder="Date ">
-        <br><br>
-        <label><b>Telephone :</b></label>
-        <input type="number" name="telephone" id="tel" placeholder="Tel  ">
-        <br><br>
-        <label><b>Mot de passe :</b></label>
-        <input type="password" name="mdp" id="Pass" placeholder="Mot de passe   ">
-        <br><br> --%>
-        <%-- <button type="button" name="log" id="log">Supprimer le Compte</button> --%>
-    </div>
+    <label><b>Nom de famille :</b></label>
+    <p>${sessionScope.nom}</p>
+    <br><br>
+    <label><b>Prenom :</b></label>
+    <p>${sessionScope.prenom}</p>
+    <br><br>
+    <label><b>Pseudo :</b></label>
+    <p>${sessionScope.pseudo}</p>
+    <br><br>
+    <label><b>Mail personnel :</b></label>
+    <p>${sessionScope.mail}</p>
+    <br><br>
+    <label><b>Date de naissance :</b></label>
+    <p>${sessionScope.date}</p>
+    <br><br>
+    <label><b>Telephone :</b></label>
+    <p>${sessionScope.tel}</p>
+    <br><br>
+    <label><b>Mot de passe :</b></label>
+    <p>${sessionScope.mdp}</p>
+    <br><br>
+    <%-- <button type="button" name="log" id="log">Supprimer le Compte</button> --%>
+    <a href="Controller?id=modifier">Modification</a>
 </body>
 </html>

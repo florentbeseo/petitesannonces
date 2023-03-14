@@ -79,9 +79,10 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 int idUtilisateur = resultat.getInt ("idUtilisateur");
                 int ind = resultat.getInt ("ind");
                 String nom = resultat.getString("nom");
+                System.out.println("nom: "+nom);
                 String prenom = resultat.getString("prenom");
                 String pseudo = resultat.getString("pseudo");
-                java.sql.Date anniversaire = resultat.getDate("anniversaire");
+                Date anniversaire = resultat.getDate("anniversaire");
                 boolean isAdmin = resultat.getBoolean("isAdmin");
                 boolean isBloque = resultat.getBoolean ("isBloque");
                 String tel = resultat.getString("tel");
@@ -108,7 +109,7 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT nom, prenom FROM utilisateur;"))
+                     "SELECT adresse, mdp FROM utilisateur;"))
         {
             while (resultat.next())
             {

@@ -21,12 +21,6 @@ public class Connection implements Action
         String mdp = request.getParameter("Mdp");
         List<Utilisateur> liste_utilisateur = daoutilisateur.listerUtilisateurs();
 
-        System.out.println("Taille liste: "+liste_utilisateur.size());
-        for (int j=0; j<liste_utilisateur.size(); j++)
-        {
-            System.out.println("Pour le bougue "+j+" le pseudo est: "+liste_utilisateur.get(j).getAdresse());
-        }
-
         //boolean champ_rempli = false;
         if(request.getParameter("Nu") != null && !request.getParameter("Nu").equals(""))
         {
@@ -35,9 +29,9 @@ public class Connection implements Action
                 boolean existe = false;
                 for (int i = 0; i < liste_utilisateur.size(); i++)
                 {
-                    if (liste_utilisateur.get(i).getAdresse() == mail)
+                    if (liste_utilisateur.get(i).getAdresse().equals(mail))
                     {
-                        if (liste_utilisateur.get(i).getMdp() == mdp)
+                        if (liste_utilisateur.get(i).getMdp().equals(mdp))
                         {
                             existe = true;
                         }

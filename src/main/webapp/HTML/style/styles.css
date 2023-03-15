@@ -189,3 +189,36 @@ header {
     color: #fff;
     transform: scale(1.1);
 }
+.anonces{
+    margin: 20px;
+    padding: 20px;
+    background-color: aliceblue;
+
+}
+.annonce {
+    border: 5px solid black;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightgrey;
+}
+
+.annonce-titre {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.annonce-prix {
+    color: red;
+    font-weight: bold;
+}
+
+.annonce-description {
+
+}
+.photo{
+    width:15%;
+    height:15%;
+    object-position: left;
+}
+.vendeur{
+}

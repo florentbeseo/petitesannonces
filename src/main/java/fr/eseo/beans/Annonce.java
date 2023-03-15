@@ -10,9 +10,10 @@ public class Annonce
     private String etat;            //Renseigne l'état structurelle du biens neuf|intacte|usé|abimé|cassé|enPoudre
     private String img;             //nom de l'image de l'annonce
     private String type;            //véhicule|mobilier|exterieur|sport|animalier|numerique|Loisir|travail
+    private String titre;           //Titre de l'annonce
     private boolean categorie;      //Biens  0 | 1  Services
-    private boolean isVisible;      //Si l'annonce est visible ou pas
-    private boolean isFini;         //Si l'annonce est fini
+    private boolean isVisible = false;      //Si l'annonce est visible ou pas
+    private boolean isFini = false;         //Si l'annonce est fini : non publiée 0 | 1 publiée
     private int vendeur;            //L'idUtilisateur qui publie l'annonce
     //Constructeurs
 
@@ -127,5 +128,15 @@ public class Annonce
     public void setType ( String type )
     {
         this.type = type;
+    }
+
+    public String getTitre ( )
+    {
+        return titre;
+    }
+
+    public void setTitre ( String titre )
+    {
+        this.titre = titre;
     }
 }

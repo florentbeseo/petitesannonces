@@ -15,10 +15,10 @@
         <ul>
             <menu>
                 <li><img  src="..fr.eseo/img/logo.png" href="#page_accueil.jsp"></li>
-                <li><a href="../page_accueil_biens.jsp" ></a>biens</li>
+                <li ><a href="Controller?id=creation_annonce">Nom du site</a></li>
                 <li><a href="../page_accueil_service.jsp" ></a>services</li>
                 <li><input id="searchbar" type="text" name="search" placeholder="recherche"></li>
-                <li><a href="../page_profil.jsp" ></a>profil</li>
+                <li><a href="../page_profil.jsp" >profil</a>profil</li>
                 <li><a href="../page_aide" ></a>aide</li>
             </menu>
         </ul>

@@ -28,6 +28,7 @@
         <span>Se rappeler de moi.</span>
         <br><br>
         <a href="Controller?id=inscription">Inscription</a>
+
     </form>
     <br>
     <c:if test="${!empty Nu_error}">

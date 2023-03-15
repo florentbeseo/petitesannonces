@@ -16,15 +16,60 @@
 <main>
     <section>
         <h2>Déposer une annonce</h2>
-        <form>
+        <form method='POST' action='Controller?id=nouvelle_annonce'>
             <label for="titre">Titre de l'annonce :</label>
             <input type="text" id="titre" name="titre" required>
+
             <label for="description">Description de l'annonce :</label>
             <textarea id="description" name="description" rows="5" required></textarea>
+
             <label for="prix">Prix :</label>
             <input type="number" id="prix" name="prix" required>
+
+            <label>Extra</label>
+            <p>
+                <input type="radio" name="extra" id="objet" value="objet" checked required>
+                <label for="objet">objet(s)</label></p>
+            <p>
+                <input type="radio" name="extra" id="temps" value="€/heure" required>
+                <label for="temps">€/heure</label>
+            </p>
+
+            <label>état</label>
+            <p>
+                <input type="radio" name="état" id="neuf" value="neuf" required>
+                <label for="neuf">neuf</label></p>
+            <p>
+                <input type="radio" name="état" id="intacte" value="intacte" required>
+                <label for="intacte">intacte</label>
+            </p>
+            <p>
+                <input type="radio" name="état" id="use" value="use" checked required>
+                <label for="use">usé</label></p>
+            <p>
+                <input type="radio" name="état" id="abime" value="abime" required>
+                <label for="abime">abimé</label>
+            </p>
+            <p>
+                <input type="radio" name="état" id="casse" value="casse" required>
+                <label for="casse">cassé</label></p>
+            <p>
+                <input type="radio" name="état" id="poudre" value="en poudre" required>
+                <label for="poudre">en poudre</label>
+            </p>
+
+            <label for="categorie">categorie</label>
+            <p id="categorie">
+                <input type="radio" name="categorie" id="bien" value=0 checked required>
+                <label for="bien">bien</label>
+
+                <input type="radio" name="categorie" id="service" value=1 required>
+                <label for="service">service</label>
+            </p>
+
             <label for="ville">Ville :</label>
             <input type="text" id="ville" name="ville" required>
+
             <input type="submit" value="Déposer l'annonce">
         </form>
     </section>

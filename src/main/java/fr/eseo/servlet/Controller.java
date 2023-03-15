@@ -1,5 +1,6 @@
 package fr.eseo.servlet;
 
+import fr.eseo.beans.DAOAnnonce;
 import fr.eseo.beans.DAOFactory;
 import fr.eseo.beans.DAOUtilisateur;
 import fr.eseo.servlet.action.*;
@@ -16,10 +17,12 @@ public class  Controller extends HttpServlet {
 
     private final Map<String, Action> actionMap = new HashMap<>();
     private DAOUtilisateur daoutilisateur;
+    private DAOAnnonce daoannonce;
 
     public void init() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         daoutilisateur = daoFactory.getUtilisateurDao("MariaDB");
+        daoannonce= daoFactory.getAnnonceDao("MariaDB");
         actionMap.put("connection",         new Connection ());
         actionMap.put("inscription",        new Inscription());
         actionMap.put("creation_annonce",   new Creation_Annonce());
@@ -30,6 +33,7 @@ public class  Controller extends HttpServlet {
         actionMap.put("accueil",            new Accueil());
         actionMap.put("accueil_temp",       new Accueil_temp());
         actionMap.put("modification",       new Modification());
+        actionMap.put("nouvelle_annonce",   new NouvelleAnnonce());
     }
 
     @Override
@@ -50,7 +54,7 @@ public class  Controller extends HttpServlet {
         }
         Action action = actionMap.get(id);
         if(action != null) {
-            action.execute(request, response, daoutilisateur);
+            action.execute(request, response, daoutilisateur, daoannonce);
         } else {
             new Exception();
         }

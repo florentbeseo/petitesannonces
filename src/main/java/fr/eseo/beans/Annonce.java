@@ -19,7 +19,8 @@ public class Annonce
 
     //Getters setters
 
-
+    public Annonce(){}
+    public Annonce(float prix,String extra,String descriptif,String etat,int vendeur,boolean catégorie){}
     public int getIdAnnonce ( )
     {
         return idAnnonce;

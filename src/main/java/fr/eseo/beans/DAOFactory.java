@@ -51,4 +51,15 @@ public class DAOFactory
                 return null;
         }
     }
+    public DAOAnnonce getAnnonceDao(String type)
+    {
+        switch(type)
+        {
+            case "MariaDB":
+                setParamMariaDB("jdbc:mariadb://localhost:3306/petiteannonce", "root", "maria");
+                return new DAOAnnoncesMariaDB(this);
+            default:
+                return null;
+        }
+    }
 }

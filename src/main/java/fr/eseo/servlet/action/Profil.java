@@ -1,5 +1,6 @@
 package fr.eseo.servlet.action;
 
+import fr.eseo.beans.DAOAnnonce;
 import fr.eseo.beans.DAOUtilisateur;
 import fr.eseo.beans.Utilisateur;
 
@@ -11,7 +12,7 @@ import java.io.IOException;
 
 public class Profil implements Action{
     @Override
-    public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {
 
         Utilisateur utilisateur = daoutilisateur.recupUtilisateur("theo.georjon@reseau.eseo.fr");
 

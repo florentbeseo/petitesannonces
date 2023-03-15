@@ -11,7 +11,6 @@ public class DAOAnnoncesMariaDB implements DAOAnnonce
         this.daoFactory = daoFactory;
     }
 
-
     @Override
     public void ajouterAnnonce ( Annonce annonce )
     {

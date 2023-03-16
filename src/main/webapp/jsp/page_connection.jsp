@@ -31,11 +31,11 @@
 
     </form>
     <br>
-    <c:if test="${!empty Nu_error}">
-        <p>ERREUR ! VEUILLEZ ENTRER UN PSEUDO</p>
+    <c:if test="${!empty M_error}">
+        <p>ERREUR MDP OU MAIL INCORRECT !</p>
     </c:if>
-    <c:if test="${!empty Mdp_error}">
-        <p>ERREUR ! VEUILLEZ RENTRER UN MOT DE PASSE</p>
+    <c:if test="${!empty error}">
+        <p>ERREUR VEUILLEZ REMPLIR TOUS LES CHAMPS</p>
     </c:if>
 </body>
 

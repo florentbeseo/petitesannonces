@@ -15,6 +15,31 @@
 </head>
 
 <body>
-    <p>test</p>
+    <h2>Session de ${sessionScope.mail}</h2><br>
+    <form class="login" method="POST" action="Controller?id=modification">
+        <label><b>Nom de famille :</b></label>
+        <input type="text" name="nom" id="Uname" placeholder=${sessionScope.nom}>
+        <br><br>
+        <label><b>Prenom :</b></label>
+        <input type="text" name="prenom" id="name" placeholder=${sessionScope.prenom}>
+        <br><br>
+        <label><b>Pseudo :</b></label>
+        <input type="text" name="pseudo" id="pseudo" placeholder=${sessionScope.pseudo}>
+        <br><br>
+        <label><b>Mail personnel :</b></label>
+        <input type="email" name="mail" id="mail" placeholder=${sessionScope.mail}>
+        <br><br>
+        <label><b>Date de naissance :</b></label>
+        <input type="date" name="date" id="date" placeholder=${sessionScope.date_naissance}>
+        <br><br>
+        <label><b>Telephone :</b></label>
+        <input type="text" name="telephone" id="tel" placeholder=${sessionScope.tel}>
+        <br><br>
+        <label><b>Mot de passe :</b></label>
+        <input type="password" name="mdp" id="Pass" placeholder=${sessionScope.mdp}>
+        <br><br>
+        <input type="submit" name="log" id="log" value="Appliquer modifications">
+        <a href="Controller?id=supprimer">Supprimer Compte</a>
+    </form>
 </body>
 </html>

@@ -60,7 +60,8 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
             preparedStatement.setString(5, Integer.toString ( utilisateur.getInd ()));
             preparedStatement.setString(6, Integer.toString ( utilisateur.getIdUtilisateur ()));
             preparedStatement.executeUpdate();
-        } catch (SQLException e)
+        }
+        catch (SQLException e)
         {
             e.printStackTrace();
         }
@@ -79,7 +80,6 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
                 int idUtilisateur = resultat.getInt ("idUtilisateur");
                 int ind = resultat.getInt ("ind");
                 String nom = resultat.getString("nom");
-                System.out.println("nom: "+nom);
                 String prenom = resultat.getString("prenom");
                 String pseudo = resultat.getString("pseudo");
                 Date anniversaire = resultat.getDate("anniversaire");

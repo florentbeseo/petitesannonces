@@ -51,10 +51,7 @@ public class Utilisateur
         this.adresse = adresse;
     }
 
-    public String getMdp ( )
-    {
-        return mdp;
-    }
+    public String getMdp ( )   { return mdp; }
 
     public void setMdp ( String mdp )
     {

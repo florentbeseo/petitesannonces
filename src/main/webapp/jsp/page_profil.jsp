@@ -16,35 +16,29 @@
 
 <body>
     <h2>Session de ${sessionScope.mail}</h2><br>
-    <%-- <ul>
-        <li><a href="">Nom du site</a></li>
-        <li><a href="">Biens</a></li>
-        <li><a href="">Service</a></li>
-        <li><a href="" >Profil</a></li>
-        <li><a href="" >Aide</a></li>
-    </ul> --%>
-    <label><b>Nom de famille :</b></label>
-    <p>${sessionScope.nom}</p>
-    <br><br>
-    <label><b>Prenom :</b></label>
-    <p>${sessionScope.prenom}</p>
-    <br><br>
-    <label><b>Pseudo :</b></label>
-    <p>${sessionScope.pseudo}</p>
-    <br><br>
-    <label><b>Mail personnel :</b></label>
-    <p>${sessionScope.mail}</p>
-    <br><br>
-    <label><b>Date de naissance :</b></label>
-    <p>${sessionScope.date}</p>
-    <br><br>
-    <label><b>Telephone :</b></label>
-    <p>${sessionScope.tel}</p>
-    <br><br>
-    <label><b>Mot de passe :</b></label>
-    <p>${sessionScope.mdp}</p>
-    <br><br>
-    <%-- <button type="button" name="log" id="log">Supprimer le Compte</button> --%>
-    <a href="Controller?id=modifier">Modification</a>
+    <form class="login">
+        <label><b>Nom de famille :</b></label>
+        <p>${sessionScope.nom}</p>
+        <br><br>
+        <label><b>Prenom :</b></label>
+        <p>${sessionScope.prenom}</p>
+        <br><br>
+        <label><b>Pseudo :</b></label>
+        <p>${sessionScope.pseudo}</p>
+        <br><br>
+        <label><b>Mail personnel :</b></label>
+        <p>${sessionScope.mail}</p>
+        <br><br>
+        <label><b>Date de naissance :</b></label>
+        <p>${sessionScope.date}</p>
+        <br><br>
+        <label><b>Telephone :</b></label>
+        <p>${sessionScope.tel}</p>
+        <br><br>
+        <label><b>Mot de passe :</b></label>
+        <p>${sessionScope.mdp}</p>
+        <br><br>
+        <a href="Controller?id=modification">Modification</a>
+    </form>
 </body>
 </html>

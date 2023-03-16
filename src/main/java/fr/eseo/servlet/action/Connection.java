@@ -22,23 +22,12 @@ public class Connection implements Action
         String mdp = request.getParameter("Mdp");
         List<Utilisateur> liste_utilisateur = daoutilisateur.listerUtilisateurs();
 
-        //boolean champ_rempli = false;
         if(request.getParameter("Nu") != null && !request.getParameter("Nu").equals(""))
         {
             if(request.getParameter("Mdp") != null && !request.getParameter("Mdp").equals(""))
             {
-                boolean existe = false;
-                for (int i = 0; i < liste_utilisateur.size(); i++)
-                {
-                    if (liste_utilisateur.get(i).getAdresse().equals(mail))
-                    {
-                        if (liste_utilisateur.get(i).getMdp().equals(mdp))
-                        {
-                            existe = true;
-                        }
-                    }
-                }
-                if (existe == true)
+                boolean etat = verification(mdp, mail, request, liste_utilisateur);
+                if (etat == true)
                 {
                     HttpSession session = request.getSession();
                     session.setAttribute("mail", mail);
@@ -46,33 +35,30 @@ public class Connection implements Action
                 }
             }
             else{
-                request.setAttribute("Mdp_error", true);
+                request.setAttribute("error", true);
             }
         }
-        /*else {
-            request.setAttribute("Mdp_error", true);  //piste pour apres avoir regler le proleme du double lancement
-        }*/
-
-
-        /*boolean existe = false;
-        if(champ_rempli == true) {
-            for (int i = 0; i < liste.size(); i++) {
-                if (liste.get(i).getPseudo() == Pseudo_utilisateur) {
-                    if (liste.get(i).getMdp() == mdp) {
-                        existe = true;
-                    }
-                }                                                               //piste pour apres avoir regler le proleme du double lancement
-            }
-            if (existe == true) {
-                HttpSession session = request.getSession();
-                session.setAttribute("user", Pseudo_utilisateur);
-                forward(request, response, "jsp/page_profil.jsp");
-            }
-        }
-        else{
-            request.setAttribute("Mdp_error", true);
-        }*/
 
         forward(request,response,"jsp/page_connection.jsp");
     }
+
+    private boolean verification(String mdp, String mail, HttpServletRequest request, List<Utilisateur>liste_utilisateur){
+
+        boolean etat = false;
+
+        for (int i=0; i<liste_utilisateur.size(); i++){
+            if(liste_utilisateur.get(i).getAdresse().equals(mail)){
+                if(liste_utilisateur.get(i).getMdp().equals(mdp)){
+                    etat = true;
+                }
+            }
+        }
+
+        if(etat == false){
+            request.setAttribute("M_error", true);
+        }
+
+        return etat;
+    }
+
 }

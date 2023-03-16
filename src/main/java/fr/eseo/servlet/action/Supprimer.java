@@ -10,22 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-public class Profil implements Action{
+public class Supprimer implements Action{
+
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-
         Utilisateur utilisateur = daoutilisateur.recupUtilisateur(session.getAttribute("mail").toString());
+        System.out.println(session.getAttribute("mail"));
 
-        session.setAttribute("nom", utilisateur.getNom());
-        session.setAttribute("prenom", utilisateur.getPrenom());
-        session.setAttribute("pseudo", utilisateur.getPseudo());
-        session.setAttribute("mail", utilisateur.getAdresse());
-        session.setAttribute("date", utilisateur.getAnniversaire());
-        session.setAttribute("tel", utilisateur.getTel());
-        session.setAttribute("mdp", utilisateur.getMdp());
+        daoutilisateur.suprimerUtilisateur(utilisateur);
 
-        forward(request, response, "jsp/page_profil.jsp");
+        forward(request, response, "jsp/page_accueil_temporaire.jsp");
     }
+
 }

@@ -35,6 +35,11 @@ public class  Controller extends HttpServlet {
         actionMap.put("modification",       new Modification());
         actionMap.put("nouvelle_annonce",   new NouvelleAnnonce());
         actionMap.put("supprimer",          new Supprimer());
+        actionMap.put("modification_admin", new DroitAdmin());
+        actionMap.put("suppression_admin",  new SuppressionAdmin());
+        actionMap.put("bloquer_compte",     new Bloquer());
+        actionMap.put("creer_compte",       new CreerCompte());
+        actionMap.put("deconnexion",        new Deconnexion());
     }
 
     @Override

@@ -10,14 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
-import java.sql.SQLException;
 import java.util.List;
 
-import static java.lang.Integer.*;
+import static java.lang.Integer.parseInt;
 
-public class Inscription implements Action{
+public class CreerCompte implements Action{
+
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+
+        session.setAttribute("admin", false);
+        session.setAttribute("creation", true);
 
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
@@ -49,11 +54,10 @@ public class Inscription implements Action{
                                     boolean etat_mail = verification_mail(mail, request, liste_utilisateur);
                                     if (etat_mail == true && etat_age == true && etat_telephone == true) {
                                         Utilisateur utilisateur = new Utilisateur(pseudo, mail, mdp, nom, prenom, anniversaire_reel, telephone);
-                                        HttpSession session = request.getSession();
-                                        session.setAttribute("pseudo", utilisateur.getPseudo());
-                                        session.setAttribute("mail", mail);
                                         daoutilisateur.ajouterUtilisateur(utilisateur);
-                                        forward(request, response, "jsp/page_acceuil.jsp");
+                                        session.setAttribute("creation", false);
+                                        session.setAttribute("admin", true);
+                                        forward(request, response, "jsp/page_profil.jsp");
                                     }
                                 }
                                 else{
@@ -81,7 +85,7 @@ public class Inscription implements Action{
             }
         }
 
-        forward(request,response,"jsp/page_inscription.jsp");
+        forward(request, response, "jsp/page_profil.jsp");
     }
 
     private boolean verification_age(String date_naissance, HttpServletRequest request){

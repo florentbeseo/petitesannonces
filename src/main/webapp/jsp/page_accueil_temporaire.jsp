@@ -19,14 +19,23 @@
 <body>
 <header>
     <div class="inner-width">
-        <h1 class="logo img">Annonces<span style="color:red;">et</span>Vous</h1>
-        <i class="menu-toggle-btn fas fa-bars"></i>
+        <a href="Controller?id=accueil_temp">
+            <h1 class="logo img">Annonces<span style="color:red;">et</span>Vous</h1>
+            <i class="menu-toggle-btn fas fa-bars"></i>
+        </a>
         <nav class="navigation-menu">
-            <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a>
+            <%-- <a href="Controller?id=accueil_temp"><i class="fas fa-home home"></i> Home</a> --%>
             <a href="Controller?id=accueil_biens"></i> Produits</a>
             <a href="Controller?id=accueil_services"></i> Services</a>
             <a href="Controller?id=aide"></i> Aide</a>
-            <a href="Controller?id=connection" class="aj_btn">Se connecter</a>
+
+            <c:if test="${connecte}">
+                <a href="Controller?id=profile" class="aj_btn">${sessionScope.pseudo}</a>
+            </c:if>
+            <c:if test="${!connecte}">
+                <a href="Controller?id=connection" class="aj_btn">Se Connecter</a>
+            </c:if>
+
         </nav>
     </div>
 </header>

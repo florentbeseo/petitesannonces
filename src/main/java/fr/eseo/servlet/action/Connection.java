@@ -18,6 +18,8 @@ public class Connection implements Action
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException
     {
 
+        HttpSession session = request.getSession();
+
         String mail = request.getParameter("Nu");
         String mdp = request.getParameter("Mdp");
         List<Utilisateur> liste_utilisateur = daoutilisateur.listerUtilisateurs();
@@ -26,11 +28,11 @@ public class Connection implements Action
         {
             if(request.getParameter("Mdp") != null && !request.getParameter("Mdp").equals(""))
             {
-                boolean etat = verification(mdp, mail, request, liste_utilisateur);
+                boolean etat = verification(mdp, mail, request, liste_utilisateur, daoutilisateur, session);
                 if (etat == true)
                 {
-                    HttpSession session = request.getSession();
                     session.setAttribute("mail", mail);
+                    session.setAttribute("connecte", true);
                     forward(request, response, "jsp/page_acceuil.jsp");
                 }
             }
@@ -39,10 +41,19 @@ public class Connection implements Action
             }
         }
 
+        //mode de test
+        /*String mail = "theo.georjon@reseau.eseo.fr";
+        HttpSession session = request.getSession();
+        session.setAttribute("mail", mail);
+        forward(request, response, "jsp/page_acceuil.jsp");*/
+
         forward(request,response,"jsp/page_connection.jsp");
     }
 
-    private boolean verification(String mdp, String mail, HttpServletRequest request, List<Utilisateur>liste_utilisateur){
+
+
+
+    private boolean verification(String mdp, String mail, HttpServletRequest request, List<Utilisateur>liste_utilisateur, DAOUtilisateur daoUtilisateur, HttpSession session){
 
         boolean etat = false;
 
@@ -50,6 +61,8 @@ public class Connection implements Action
             if(liste_utilisateur.get(i).getAdresse().equals(mail)){
                 if(liste_utilisateur.get(i).getMdp().equals(mdp)){
                     etat = true;
+                    Utilisateur utilisateur = daoUtilisateur.recupUtilisateur(liste_utilisateur.get(i).getAdresse());
+                    session.setAttribute("pseudo", utilisateur.getPseudo());
                 }
             }
         }

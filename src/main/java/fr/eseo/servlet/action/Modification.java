@@ -77,7 +77,6 @@ public class Modification implements Action{
             System.out.println("MDP de l'utilisateur: "+utilisateur.getMdp());
         }*/
 
-
         if (request.getParameter("log") != null) {
             daoutilisateur.modifierUtilisateur(utilisateur);
             forward(request, response, "jsp/page_profil.jsp");

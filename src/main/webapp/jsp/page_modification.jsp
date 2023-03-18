@@ -15,7 +15,17 @@
 </head>
 
 <body>
-    <h2>Session de ${sessionScope.mail}</h2><br>
+    <header>
+        <div class="inner-width">
+            <a href="Controller?id=accueil">
+                <h1 class="logo img">Annonces<span style="color:red;">et</span>Vous</h1>
+                <i class="menu-toggle-btn fas fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
+    <h2>Session de ${sessionScope.pseudo}</h2><br>
+
     <form class="login" method="POST" action="Controller?id=modification">
         <label><b>Nom de famille :</b></label>
         <input type="text" name="nom" id="Uname" placeholder=${sessionScope.nom}>
@@ -39,7 +49,9 @@
         <input type="password" name="mdp" id="Pass" placeholder=${sessionScope.mdp}>
         <br><br>
         <input type="submit" name="log" id="log" value="Appliquer modifications">
+        <br><br>
         <a href="Controller?id=supprimer">Supprimer Compte</a>
+        <br>
     </form>
 </body>
 </html>

@@ -13,8 +13,19 @@
     <title>Connetions</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
+    <header>
+        <div class="inner-width">
+            <a href="Controller?id=accueil">
+                <h1 class="logo img">Annonces<span style="color:red;">et</span>Vous</h1>
+                <i class="menu-toggle-btn fas fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
     <h2>Connections</h2><br>
+
     <form class="login" method='POST' action='Controller?id=connection'>
         <label><b>Nom d'utilisateur</b></label>
         <input type="email" name="Nu" id="Nu" placeholder="Username">
@@ -30,7 +41,9 @@
         <a href="Controller?id=inscription">Inscription</a>
 
     </form>
+
     <br>
+
     <c:if test="${!empty M_error}">
         <p>ERREUR MDP OU MAIL INCORRECT !</p>
     </c:if>

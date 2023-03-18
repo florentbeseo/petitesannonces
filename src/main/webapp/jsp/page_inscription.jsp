@@ -15,7 +15,17 @@
 </head>
 
 <body>
+    <header>
+        <div class="inner-width">
+            <a href="Controller?id=accueil">
+                <h1 class="logo img">Annonces<span style="color:red;">et</span>Vous</h1>
+                <i class="menu-toggle-btn fas fa-bars"></i>
+            </a>
+        </div>
+    </header>
+
     <h2>Creation compte</h2><br>
+
     <form class="login" method="POST" action="Controller?id=inscription">
         <label><b>Nom de famille :</b></label>
         <input type="text" name="nom" id="Uname" placeholder="Nom">
@@ -40,6 +50,7 @@
         <br><br>
         <input type="submit" name="log" id="log" value="Creer un compte">
     </form>
+
     <c:if test="${!empty error}">
         <p>Veuillez remplir tous les champs !</p>
     </c:if>

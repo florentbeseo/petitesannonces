@@ -85,6 +85,11 @@ public class CreerCompte implements Action{
             }
         }
 
+        if(request.getParameter("log") != null) {
+            session.setAttribute("creation", false);
+            session.setAttribute("admin", true);
+        }
+
         forward(request, response, "jsp/page_profil.jsp");
     }
 

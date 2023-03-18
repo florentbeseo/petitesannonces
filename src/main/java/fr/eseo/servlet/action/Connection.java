@@ -45,6 +45,7 @@ public class Connection implements Action
         /*String mail = "theo.georjon@reseau.eseo.fr";
         HttpSession session = request.getSession();
         session.setAttribute("mail", mail);
+        session.setAttribute("connecte", true);
         forward(request, response, "jsp/page_acceuil.jsp");*/
 
         forward(request,response,"jsp/page_connection.jsp");

@@ -75,8 +75,11 @@
             <input type="submit" name="log1" id="log1" value="Chercher">
             <br>
             <c:if test="${admin_utilisateur}">
-                <a href="Controller?id=bloquer_compte">Bloquer Compte ${sessionScope.mail_selec}</a>
-                <a href="Controller?id=suppression_admin">Supprimer Compte ${sessionScope.mail_selec}</a>
+                <a href="Controller?id=bloquer_compte">Bloquer Compte de ${mail_selec}</a>
+                <a href="Controller?id=suppression_admin">Supprimer Compte de ${mail_selec}</a>
+                <c:if test="${bloque_admin}">
+                    <a href="Controller?id=bloquer_admin">Bloquer Droit Admin de ${mail_selec}</a>
+                </c:if>
             </c:if>
             <br>
             <a href="Controller?id=creer_compte">Créer Compte</a>
@@ -84,8 +87,8 @@
             <p>Faire Modération Annonce</p>
             <br>
         </form>
-
     </c:if>
+
     <c:if test="${creation}">
         <form class="login" method="POST" action="Controller?id=creer_compte">
             <label><b>Nom de famille :</b></label>

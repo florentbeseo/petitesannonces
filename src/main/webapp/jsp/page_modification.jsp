@@ -39,15 +39,12 @@
         <label><b>Mail personnel :</b></label>
         <input type="email" name="mail" id="mail" placeholder=${sessionScope.mail}>
         <br><br>
-        <label><b>Date de naissance :</b></label>
-        <input type="date" name="date" id="date" placeholder=${sessionScope.date_naissance}>
-        <br><br>
         <label><b>Telephone :</b></label>
         <input type="text" name="telephone" id="tel" placeholder=${sessionScope.tel}>
         <br><br>
-        <label><b>Mot de passe :</b></label>
+        <%-- <label><b>Mot de passe :</b></label>
         <input type="password" name="mdp" id="Pass" placeholder=${sessionScope.mdp}>
-        <br><br>
+        <br><br> --%>
         <input type="submit" name="log" id="log" value="Appliquer modifications">
         <br><br>
         <a href="Controller?id=supprimer">Supprimer Compte</a>

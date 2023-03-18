@@ -34,48 +34,48 @@ public class Modification implements Action{
 
         if(nom != null && !nom.equals("")){
             utilisateur.setNom(nom);
-            System.out.println("Nom de l'utilisateur: "+utilisateur.getNom());
+            session.setAttribute("nom", utilisateur.getNom());
         }
-        /*if (prenom != null && !prenom.equals("")) {
-            est_rempli = true;
+
+        if (prenom != null && !prenom.equals("")) {
             utilisateur.setPrenom(prenom);
-            System.out.println("Prenom de l'utilisateur: "+utilisateur.getPrenom());
+            session.setAttribute("prenom", utilisateur.getPrenom());
         }
+
         if (pseudo != null && !pseudo.equals("")) {
-            est_rempli = true;
             utilisateur.setPseudo(pseudo);
-            System.out.println("Pseudo de l'utilisateur: "+utilisateur.getPseudo());
+            session.setAttribute("pseudo", utilisateur.getPseudo());
         }
+
         if (mail != null && !mail.equals("")) {
-            est_rempli = true;
             boolean etat_mail = verification_mail(mail, request, liste_utilisateur);
             if(etat_mail == true){
                 utilisateur.setAdresse(mail);
-                System.out.println("Adresse de l'utilisateur: "+utilisateur.getAdresse());
+                session.setAttribute("mail", utilisateur.getAdresse());
             }
         }
+
         if (anniversaire != null && !anniversaire.equals("")) {
-            est_rempli = true;
             Date anniversaire_reel = Date.valueOf(anniversaire);
             boolean etat_age = verification_age(anniversaire, request);
             if(etat_age == true){
                 utilisateur.setAnniversaire(anniversaire_reel);
-                System.out.println("Anniversaire de l'utilisateur: "+utilisateur.getAnniversaire());
+                session.setAttribute("anniversaire", utilisateur.getAnniversaire());
             }
         }
+
         if (telephone != null && !telephone.equals("")) {
-            est_rempli = true;
             boolean etat_telephone = verificattion_telephone(telephone, request);
             if(etat_telephone == true){
                 utilisateur.setTel(telephone);
-                System.out.println("Telephone de l'utilisateur: "+utilisateur.getTel());
+                session.setAttribute("telephone", utilisateur.getTel());
             }
         }
+
         if (mdp != null && !mdp.equals("")) {
-            est_rempli = true;
             utilisateur.setMdp(mdp);
-            System.out.println("MDP de l'utilisateur: "+utilisateur.getMdp());
-        }*/
+            session.setAttribute("mdp", utilisateur.getMdp());
+        }
 
         if (request.getParameter("log") != null) {
             daoutilisateur.modifierUtilisateur(utilisateur);

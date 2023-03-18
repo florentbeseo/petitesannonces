@@ -18,6 +18,8 @@ public class Profil implements Action{
 
         Utilisateur utilisateur = daoutilisateur.recupUtilisateur(session.getAttribute("mail").toString());
 
+        //request.setAttribute("admin_utilisateur", false);
+
         session.setAttribute("nom", utilisateur.getNom());
         session.setAttribute("prenom", utilisateur.getPrenom());
         session.setAttribute("pseudo", utilisateur.getPseudo());

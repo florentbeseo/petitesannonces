@@ -52,13 +52,16 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "UPDATE utilisateur SET nom=?, prenom=?, adresse=?, tel=?,ind=? WHERE id=?;")){
+                     "UPDATE utilisateur SET nom=?, prenom=?, adresse=?, tel=?, pseudo=?, isBloque=?, isAdmin=?, ind=? WHERE idUtilisateur=?;")){
             preparedStatement.setString(1, utilisateur.getNom ());
             preparedStatement.setString(2, utilisateur.getPrenom ());
             preparedStatement.setString(3, utilisateur.getAdresse ());
             preparedStatement.setString(4, utilisateur.getTel ());
-            preparedStatement.setString(5, Integer.toString ( utilisateur.getInd ()));
-            preparedStatement.setString(6, Integer.toString ( utilisateur.getIdUtilisateur ()));
+            preparedStatement.setString(5, utilisateur.getPseudo ());
+            preparedStatement.setBoolean(6, utilisateur.isBloque());
+            preparedStatement.setBoolean(7, utilisateur.isAdmin());
+            preparedStatement.setString(8, Integer.toString ( utilisateur.getInd ()));
+            preparedStatement.setString(9, Integer.toString ( utilisateur.getIdUtilisateur ()));
             preparedStatement.executeUpdate();
         }
         catch (SQLException e)

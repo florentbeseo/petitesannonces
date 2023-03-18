@@ -21,8 +21,10 @@ public class DroitAdmin implements Action{
         String objet_recherche = request.getParameter("recherche");
         if(objet_recherche != null && !objet_recherche.equals("")){
             if(recherche_utilisateur(objet_recherche, daoutilisateur)){
-                session.setAttribute("admin_utilisateur", true);
+                Utilisateur utilisateur = daoutilisateur.recupUtilisateur(objet_recherche);
+                request.setAttribute("admin_utilisateur", true);
                 session.setAttribute("mail_selec", objet_recherche);
+                request.setAttribute("bloque_admin", utilisateur.isAdmin());
             }
         }
 

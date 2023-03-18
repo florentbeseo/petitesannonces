@@ -12,6 +12,7 @@ public class NouvelleAnnonce implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {
 
+        /*
         //float prix = Float.parseFloat(request.getParameter("prix"));     //attention probleme de transcipage
         String extra = request.getParameter("extra");
         String descriptif = request.getParameter("description");
@@ -21,11 +22,11 @@ public class NouvelleAnnonce implements Action{
         boolean categorie = Boolean.parseBoolean(request.getParameter("categorie"));
         boolean visible = true;
         boolean fini = false;
-        HttpSession session = request.getSession();
+        HttpSession session = request.getSession();*/
         /*if (session.getAttribute("login") == null) {              existe pas de login dans la session ni dans les request de page_creation_annonce
             session.setAttribute("login", "");
         }*/
-        String mail = String.valueOf(request.getSession().getAttribute("mail"));
+        /*String mail = String.valueOf(request.getSession().getAttribute("mail"));
         Utilisateur utilisateur = daoutilisateur.recupUtilisateur(mail);
         int vendeur = utilisateur.getIdUtilisateur();
 
@@ -37,9 +38,12 @@ public class NouvelleAnnonce implements Action{
             Annonce annonce = new Annonce(205.5F, "test_extra", "descriptif_test", "etat_test", 2, true);
             daoannonce.ajouterAnnonce(annonce);    //avec ce test on voit qu'il ya un souci dans l'écriture de la base de donnee
         }
-        System.out.println("3");
+        System.out.println("3");*/
 
         //request.getParameter("Nu") != null && !request.getParameter("Nu").equals("")
+
+        Annonce annonce = new Annonce(10.5F, "test", "test", "test", 1, false);
+        daoannonce.ajouterAnnonce(annonce);
 
         forward(request, response, "jsp/page_creation_annonce.jsp");
     }

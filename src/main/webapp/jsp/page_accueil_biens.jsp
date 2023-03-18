@@ -39,5 +39,9 @@
             </nav>
         </div>
     </header>
+
+    <div>
+        <a href="Controller?id=creation_annonce">Nouvelle Annonce</a>
+    </div>
 </body>
 </html>

@@ -43,11 +43,12 @@
     <main>
         <section>
             <h2>Déposer une annonce</h2>
+
             <form method='POST' action='Controller?id=nouvelle_annonce'>
                 <label for="titre">Titre de l'annonce :</label>
                 <input type="text" id="titre" name="titre" required>
 
-                <label for="description">Description de l'annonce :</label>
+                <%-- <label for="description">Description de l'annonce :</label>
                 <textarea id="description" name="description" rows="5" required></textarea>
 
                 <label for="prix">Prix :</label>
@@ -95,11 +96,16 @@
                 </p>
 
                 <label for="ville">Ville :</label>
-                <input type="text" id="ville" name="ville" required>
+                <input type="text" id="ville" name="ville" required> --%>
 
-                <input type="submit" value="Déposer l'annonce">
+                <input type="submit" name="log" value="Déposer l'annonce">
             </form>
+
+            <c:if test="${!empty error}">
+                Tous les champs ne sont pas remplis !
+            </c:if>
         </section>
+
         <section>
             <h2>Annonces récentes</h2>
             <ul>

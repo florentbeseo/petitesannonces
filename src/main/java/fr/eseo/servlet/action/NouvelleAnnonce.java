@@ -11,12 +11,13 @@ import java.io.IOException;
 public class NouvelleAnnonce implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {
-
         String titre = request.getParameter("titre");
         float prix = Float.parseFloat(request.getParameter("prix"));     //attention probleme de transcipage
         String extra = request.getParameter("extra");
         String descriptif = request.getParameter("description");
         String etat = request.getParameter("etat");
+        String img = request.getParameter("img");
+
         String type = request.getParameter("type");
         HttpSession session = request.getSession();
         String mail = session.getAttribute("mail").toString();
@@ -33,7 +34,7 @@ public class NouvelleAnnonce implements Action{
 
         System.out.println(etat);
 
-        Annonce annonce = new Annonce(prix, extra, descriptif, etat, type, titre, categorie, vendeur);
+        Annonce annonce = new Annonce(prix, extra, descriptif, etat, img, type, titre, categorie, vendeur);
 
         /*if (request.getParameter("log") != null) {
             Annonce annonce = new Annonce(205.5F, "test_extra", "descriptif_test", "etat_test", 2, true);

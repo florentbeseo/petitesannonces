@@ -20,7 +20,7 @@ public class Annonce
     //Getters setters
 
     public Annonce(){}
-    public Annonce(float prix, String extra, String descriptif, String etat,String type,String titre, boolean categorie, int vendeur){
+    public Annonce(float prix, String extra, String descriptif, String etat, String img,String type,String titre, boolean categorie, int vendeur){
         this.prix = prix;
         this.extra = extra;
         this.descriptif = descriptif;

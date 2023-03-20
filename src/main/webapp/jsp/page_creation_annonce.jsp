@@ -134,6 +134,7 @@
                 <label for="ville">Ville :</label>
                 <input type="text" id="ville" name="ville" required>
 
+
                 <input type="submit" name="log" value="Déposer l'annonce">
             </form>
 

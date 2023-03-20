@@ -79,7 +79,7 @@ public class DAOAnnoncesMariaDB implements DAOAnnonce
     }
 
     @Override
-    public Annonce recupAnnonce (String typeA,Boolean categorieA)
+    public Annonce recupAnnonce (String typeA, Boolean categorieA)
     {
         Annonce annonce = new Annonce ();
         try (Connection connexion = daoFactory.getConnection() ;

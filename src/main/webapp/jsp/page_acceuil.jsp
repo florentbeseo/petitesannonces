@@ -24,10 +24,7 @@
                 <i class="menu-toggle-btn fas fa-bars"></i>
             </a>
             <nav class="navigation-menu">
-                <%-- <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a> --%>
-                <%-- <a href="Controller?id=creation_annonce"><i ></i> TEST</a> --%>
-                <%-- <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a> --%>
-                <a href="Controller?id=accueil_biens"></i> Produits</a>
+                <a href="Controller?id=accueil_biens"></i> Biens</a>
                 <a href="Controller?id=accueil_services"></i> Services</a>
                 <a href="Controller?id=aide"></i> Aide</a>
 
@@ -42,6 +39,12 @@
         </div>
     </header>
 </body>
+    <c:if test="${connecte}">
+        <div>
+            <a href="Controller?id=creation_annonce">Nouvelle Annonce</a>
+        </div>
+    </c:if>
+
     <div class="annonce">
         <h2 class="annonce-titre">Titre : </h2>
         <p class="annonce-prix">Prix : </p>

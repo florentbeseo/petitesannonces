@@ -22,7 +22,7 @@ public class  Controller extends HttpServlet {
     public void init() {
         DAOFactory daoFactory = DAOFactory.getInstance();
         daoutilisateur = daoFactory.getUtilisateurDao("MariaDB");
-        daoannonce= daoFactory.getAnnonceDao("MariaDB");
+        daoannonce = daoFactory.getAnnonceDao("MariaDB");
         actionMap.put("connection",         new Connection ());
         actionMap.put("inscription",        new Inscription());
         actionMap.put("creation_annonce",   new Creation_Annonce());

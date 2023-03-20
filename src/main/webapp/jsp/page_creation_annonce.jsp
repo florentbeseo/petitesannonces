@@ -48,13 +48,46 @@
                 <label for="titre">Titre de l'annonce :</label>
                 <input type="text" id="titre" name="titre" required>
 
-                <%-- <label for="description">Description de l'annonce :</label>
+                <label for="description">Description de l'annonce :</label>
                 <textarea id="description" name="description" rows="5" required></textarea>
 
                 <label for="prix">Prix :</label>
                 <input type="number" id="prix" name="prix" required>
 
-                <label>Extra</label>
+                <label>TYPE</label>
+                    <p>
+                        <input type="radio" name="type" id="véhicule" value="véhicule" checked required>
+                        <label for="véhicule">véhicule</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="type" id="mobilier" value="mobilier" required>
+                        <label for="mobilier">mobilier</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="type" id="exterieur" value="exterieur" required>
+                        <label for="exterieur">exterieur</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="type" id="sport" value="sport" required>
+                        <label for="sport">sport</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="type" id="animalier" value="animalier" required>
+                        <label for="animalier">animalier</label>
+                    </p>
+                <p>
+                    <input type="radio" name="type" id="numerique" value="numerique" required>
+                    <label for="numerique">numerique</label>
+                </p>
+                <p>
+                    <input type="radio" name="type" id="Loisir" value="Loisir" required>
+                    <label for="Loisir">Loisir</label>
+                </p>
+                <p>
+                    <input type="radio" name="type" id="travail" value="travail" required>
+                    <label for="travail">travail</label>
+                </p>
+                <label>EXTRA</label>
                 <p>
                     <input type="radio" name="extra" id="objet" value="objet" checked required>
                     <label for="objet">objet(s)</label></p>
@@ -66,21 +99,24 @@
                 <label>état</label>
                 <p>
                     <input type="radio" name="état" id="neuf" value="neuf" required>
-                    <label for="neuf">neuf</label></p>
+                    <label for="neuf">neuf</label>
+                </p>
                 <p>
                     <input type="radio" name="état" id="intacte" value="intacte" required>
                     <label for="intacte">intacte</label>
                 </p>
                 <p>
                     <input type="radio" name="état" id="use" value="use" checked required>
-                    <label for="use">usé</label></p>
+                    <label for="use">usé</label>
+                </p>
                 <p>
                     <input type="radio" name="état" id="abime" value="abime" required>
                     <label for="abime">abimé</label>
                 </p>
                 <p>
                     <input type="radio" name="état" id="casse" value="casse" required>
-                    <label for="casse">cassé</label></p>
+                    <label for="casse">cassé</label>
+                </p>
                 <p>
                     <input type="radio" name="état" id="poudre" value="en poudre" required>
                     <label for="poudre">en poudre</label>
@@ -96,7 +132,7 @@
                 </p>
 
                 <label for="ville">Ville :</label>
-                <input type="text" id="ville" name="ville" required> --%>
+                <input type="text" id="ville" name="ville" required>
 
                 <input type="submit" name="log" value="Déposer l'annonce">
             </form>

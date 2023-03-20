@@ -45,7 +45,7 @@ public class DAOFactory
         switch(type)
         {
             case "MariaDB":
-                setParamMariaDB("jdbc:mariadb://localhost:3306/petiteannonce", "root", "maria");
+                setParamMariaDB("jdbc:mariadb://localhost:3306/petiteannonce", "root", "MqcvTV29");
                 return new DAOUtilisateurMariaDB(this);
             default:
                 return null;
@@ -56,7 +56,7 @@ public class DAOFactory
         switch(type)
         {
             case "MariaDB":
-                setParamMariaDB("jdbc:mariadb://localhost:3306/petiteannonce", "root", "maria");
+                setParamMariaDB("jdbc:mariadb://localhost:3306/petiteannonce", "root", "MqcvTV29");
                 return new DAOAnnoncesMariaDB(this);
             default:
                 return null;

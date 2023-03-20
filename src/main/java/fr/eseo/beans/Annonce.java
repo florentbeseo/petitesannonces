@@ -20,13 +20,15 @@ public class Annonce
     //Getters setters
 
     public Annonce(){}
-    public Annonce(float prix, String extra, String descriptif, String etat, int vendeur, boolean categorie){
+    public Annonce(float prix, String extra, String descriptif, String etat,String type,String titre, boolean categorie, int vendeur){
         this.prix = prix;
         this.extra = extra;
-        this.descriptif =descriptif;
+        this.descriptif = descriptif;
         this.etat = etat;
-        this.vendeur = vendeur;
+        this.type = type;
+        this.titre = titre;
         this.categorie = categorie;
+        this.vendeur = vendeur;
     }
 
     public int getIdAnnonce ( )

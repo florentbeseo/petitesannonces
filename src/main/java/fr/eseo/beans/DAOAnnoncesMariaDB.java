@@ -16,16 +16,20 @@ public class DAOAnnoncesMariaDB implements DAOAnnonce
     {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "INSERT INTO annonce(idAnnonce , prix , extra , descriptif, vendeur , categorie , isVisible , isFini) VALUES(?, ?, ?, ?, ?, ?, ?, ?);"))
+                     "INSERT INTO annonce(idAnnonce , prix , extra , descriptif, etat , titre, categorie , isVisible , isFini, vendeur) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"))
         {
             preparedStatement.setInt(       1,  annonce.getIdAnnonce ());
             preparedStatement.setFloat(     2,  annonce.getPrix ());
             preparedStatement.setString(    3,  annonce.getExtra ());
             preparedStatement.setString(    4,  annonce.getDescriptif ());
-            preparedStatement.setInt(       5,  annonce.getVendeur ());
-            preparedStatement.setBoolean(   6,  annonce.isCategorie ());
-            preparedStatement.setBoolean(   7,  annonce.isVisible ());
-            preparedStatement.setBoolean(   8,  annonce.isFini ());
+            preparedStatement.setString(    5,  annonce.getEtat ());
+            preparedStatement.setString(    6,  annonce.getType ());
+            preparedStatement.setString(    7,  annonce.getTitre ());
+            preparedStatement.setBoolean(   8,  annonce.isCategorie ());
+            preparedStatement.setBoolean(   9,  annonce.isVisible ());
+            preparedStatement.setBoolean(   10,  annonce.isFini ());
+            preparedStatement.setInt(       11,  annonce.getVendeur ());
+
             preparedStatement.executeUpdate();
         } catch (SQLException e)
         {

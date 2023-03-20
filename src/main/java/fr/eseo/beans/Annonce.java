@@ -9,7 +9,7 @@ public class Annonce
     private String descriptif;      //Description de l'annonce
     private String etat;            //Renseigne l'état structurelle du biens neuf|intacte|usé|abimé|cassé|enPoudre
     private String img;             //nom de l'image de l'annonce
-    private String type;            //véhicule|mobilier|exterieur|sport|animalier|numerique|Loisir|travail
+    private String type;            //vehicule|mobilier|exterieur|sport|animalier|numerique|Loisir|travail|bricolage
     private String titre;           //Titre de l'annonce
     private boolean categorie;      //Biens  0 | 1  Services
     private boolean isVisible = false;      //Si l'annonce est visible ou pas

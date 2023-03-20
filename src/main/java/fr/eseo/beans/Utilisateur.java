@@ -1,5 +1,7 @@
 package fr.eseo.beans;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import java.sql.Date;
 
 public class Utilisateur
@@ -9,7 +11,7 @@ public class Utilisateur
     private int ind = 0;            //Indexe de satisfaction de l'utilisateur
     private String pseudo;      //Pseudonyme de l'utilisateur
     private String adresse;     //Adresse mail de l'utilisateur
-    private String mdp;         //Mot de passe de l'utilisateur
+    private String mdp;         //Mot de passe de l'utilisateur encrypté
     private String nom;         //Nom de l'utilisateur
     private String prenom;      //Prénom de l'utilisateur
     private Date anniversaire ;//Date d'anniversaire format aa/mm/jj
@@ -38,6 +40,16 @@ public class Utilisateur
         this.anniversaire = anniversaire;
         this.tel = tel;
     }
+    public Utilisateur(String pseudo, String adresse, String nom, String prenom, Date anniversaire, String tel)
+    {
+        this.ind = 0;
+        this.pseudo = pseudo;
+        this.adresse = adresse;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.anniversaire = anniversaire;
+        this.tel = tel;
+    }
 
     //getters setters
 
@@ -53,10 +65,11 @@ public class Utilisateur
 
     public String getMdp ( )   { return mdp; }
 
-    public void setMdp ( String mdp )
+    public void setMdpC ( String mdp )
     {
-        this.mdp = mdp;
+        this.mdp =  BCrypt.hashpw(mdp, BCrypt.gensalt());
     }
+    public void setMdp ( String mdp ) { this.mdp = mdp; }
 
     public String getNom ( )
     {
@@ -106,6 +119,17 @@ public class Utilisateur
     public void setBloque ( boolean bloque )
     {
         isBloque = bloque;
+    }
+
+    public boolean isBonMdp( String mdp ) {
+        if(BCrypt.checkpw(mdp, this.mdp))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public String getPseudo ( )

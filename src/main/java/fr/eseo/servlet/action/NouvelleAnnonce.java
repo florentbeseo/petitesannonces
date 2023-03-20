@@ -31,6 +31,7 @@ public class NouvelleAnnonce implements Action{
             session.setAttribute("login", "");
         }*/
 
+        System.out.println(etat);
 
         Annonce annonce = new Annonce(prix, extra, descriptif, etat, type, titre, categorie, vendeur);
 
@@ -38,9 +39,11 @@ public class NouvelleAnnonce implements Action{
             Annonce annonce = new Annonce(205.5F, "test_extra", "descriptif_test", "etat_test", 2, true);
             daoannonce.ajouterAnnonce(annonce);    //avec ce test on voit qu'il ya un souci dans l'écriture de la base de donnee
         }*/
+        System.out.println("2");
+
         daoannonce.ajouterAnnonce(annonce);
 
-        System.out.println("1");
+        System.out.println("3");
         //request.getParameter("Nu") != null && !request.getParameter("Nu").equals("")
 
 

@@ -75,18 +75,18 @@
                         <input type="radio" name="type" id="animalier" value="animalier" required>
                         <label for="animalier">animalier</label>
                     </p>
-                <p>
-                    <input type="radio" name="type" id="numerique" value="numerique" required>
-                    <label for="numerique">numerique</label>
-                </p>
-                <p>
-                    <input type="radio" name="type" id="Loisir" value="Loisir" required>
-                    <label for="Loisir">Loisir</label>
-                </p>
-                <p>
-                    <input type="radio" name="type" id="travail" value="travail" required>
-                    <label for="travail">travail</label>
-                </p>
+                    <p>
+                        <input type="radio" name="type" id="numerique" value="numerique" required>
+                        <label for="numerique">numerique</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="type" id="Loisir" value="Loisir" required>
+                        <label for="Loisir">Loisir</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="type" id="travail" value="travail" required>
+                        <label for="travail">travail</label>
+                    </p>
                 <label>EXTRA</label>
                 <p>
                     <input type="radio" name="extra" id="objet" value="objet" checked required>
@@ -98,27 +98,27 @@
 
                 <label>état</label>
                 <p>
-                    <input type="radio" name="état" id="neuf" value="neuf" required>
+                    <input type="radio" name="etat" id="neuf" value="neuf" required>
                     <label for="neuf">neuf</label>
                 </p>
                 <p>
-                    <input type="radio" name="état" id="intacte" value="intacte" required>
+                    <input type="radio" name="etat" id="intacte" value="intacte" required>
                     <label for="intacte">intacte</label>
                 </p>
                 <p>
-                    <input type="radio" name="état" id="use" value="use" checked required>
+                    <input type="radio" name="etat" id="use" value="use" checked required>
                     <label for="use">usé</label>
                 </p>
                 <p>
-                    <input type="radio" name="état" id="abime" value="abime" required>
+                    <input type="radio" name="etat" id="abime" value="abime" required>
                     <label for="abime">abimé</label>
                 </p>
                 <p>
-                    <input type="radio" name="état" id="casse" value="casse" required>
+                    <input type="radio" name="etat" id="casse" value="casse" required>
                     <label for="casse">cassé</label>
                 </p>
                 <p>
-                    <input type="radio" name="état" id="poudre" value="en poudre" required>
+                    <input type="radio" name="etat" id="poudre" value="en poudre" required>
                     <label for="poudre">en poudre</label>
                 </p>
 

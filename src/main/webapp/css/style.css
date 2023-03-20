@@ -34,14 +34,8 @@ label{
     border-radius: 3px;
     padding-left: 8px;
 }
-#Pass{
-    width: 300px;
-    height: 30px;
-    border: none;
-    border-radius: 3px;
-    padding-left: 8px;
-}
-#name{
+#Pass
+{
     width: 300px;
     height: 30px;
     border: none;

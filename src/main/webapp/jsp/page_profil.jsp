@@ -24,7 +24,6 @@
                 <i class="menu-toggle-btn fas fa-bars"></i>
             </a>
             <nav class="navigation-menu">
-                <%-- <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a> --%>
                 <a href="Controller?id=accueil_biens"></i> Produits</a>
                 <a href="Controller?id=accueil_services"></i> Services</a>
                 <a href="Controller?id=aide"></i> Aide</a>
@@ -72,11 +71,12 @@
     <c:if test="${admin}">
         <form class="login" method="POST" action="Controller?id=modification_admin">
             <input type="email" name="recherche" id="recherche" placeholder="Recherche utilisateur...">
-            <input type="submit" name="log1" id="log1" value="Chercher">
+            <input type="submit" name="chercher" value="Chercher">
             <br>
             <c:if test="${admin_utilisateur}">
                 <a href="Controller?id=bloquer_compte">Bloquer Compte de ${mail_selec}</a>
                 <a href="Controller?id=supprimer">Supprimer Compte de ${mail_selec}</a>
+                <a href="Controller?id=modifier_indice_satisfaction">Modifier l'Indice de ${mail_selec}</a>
                 <c:if test="${bloque_admin}">
                     <a href="Controller?id=bloquer_admin">Bloquer Droit Admin de ${mail_selec}</a>
                 </c:if>
@@ -113,6 +113,14 @@
             <input type="password" name="mdp" id="Pass" placeholder="Mot de passe   ">
             <br><br>
             <input type="submit" name="log" id="log" value="Creer un compte">
+        </form>
+    </c:if>
+    <br>
+    <c:if test="${modif_ind}">
+        <form class="login" method="POST" action="Controller?id=modifier_indice_satisfaction">
+            <label><b>Indice de Satisfaction:</b></label>
+            <input type="number" name="indice" placeholder=${ind} required>
+            <input type="submit" name="valider" value="Valider">
         </form>
     </c:if>
 </body>

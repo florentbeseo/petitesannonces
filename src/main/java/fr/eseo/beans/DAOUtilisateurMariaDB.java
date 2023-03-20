@@ -116,15 +116,17 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT adresse, mdp FROM utilisateur;"))
+                     "SELECT adresse, mdp, isBloque FROM utilisateur;"))
         {
             while (resultat.next())
             {
                 String adresse = resultat.getString("adresse");
                 String mdp = resultat.getString("mdp");
+                boolean isBloque = resultat.getBoolean("isBloque");
                 Utilisateur utilisateur = new Utilisateur();
                 utilisateur.setAdresse(adresse);
                 utilisateur.setMdp(mdp);
+                utilisateur.setBloque(isBloque);
                 annuaire.add(utilisateur);
             }
         } catch (SQLException e)

@@ -3,6 +3,7 @@ package fr.eseo.servlet.action;
 import fr.eseo.beans.DAOAnnonce;
 import fr.eseo.beans.DAOUtilisateur;
 import fr.eseo.beans.Utilisateur;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -59,8 +60,9 @@ public class Connection implements Action
         boolean etat = false;
 
         for (int i=0; i<liste_utilisateur.size(); i++){
-            if(liste_utilisateur.get(i).getAdresse().equals(mail)){
-                if(liste_utilisateur.get(i).getMdp().equals(mdp)){
+            if(liste_utilisateur.get(i).getAdresse().equals(mail) && liste_utilisateur.get(i).getMdp().equals(mdp)){
+                System.out.println("isBloque: "+liste_utilisateur.get(i).isBloque());
+                if(liste_utilisateur.get(i).isBloque() == false) {
                     etat = true;
                     Utilisateur utilisateur = daoUtilisateur.recupUtilisateur(liste_utilisateur.get(i).getAdresse());
                     session.setAttribute("pseudo", utilisateur.getPseudo());

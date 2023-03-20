@@ -50,7 +50,7 @@ public class Inscription implements Action{
                                     if (etat_mail == true && etat_age == true && etat_telephone == true) {
                                         Utilisateur utilisateur = new Utilisateur(pseudo, mail, mdp, nom, prenom, anniversaire_reel, telephone);
                                         HttpSession session = request.getSession();
-                                        //session.setAttribute("pseudo", utilisateur.getPseudo());
+                                        session.setAttribute("pseudo", utilisateur.getPseudo());
                                         session.setAttribute("connecte", true);
                                         session.setAttribute("mail", mail);
                                         daoutilisateur.ajouterUtilisateur(utilisateur);

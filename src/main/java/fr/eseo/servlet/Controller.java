@@ -40,6 +40,7 @@ public class  Controller extends HttpServlet {
         actionMap.put("bloquer_compte",     new Bloquer());
         actionMap.put("creer_compte",       new CreerCompte());
         actionMap.put("deconnexion",        new Deconnexion());
+        actionMap.put("modifier_indice_satisfaction", new ModifierInd());
     }
 
     @Override

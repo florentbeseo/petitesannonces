@@ -24,8 +24,8 @@
                 <i class="menu-toggle-btn fas fa-bars"></i>
             </a>
             <nav class="navigation-menu">
-                <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a>
-                <a href="Controller?id=creation_annonce"><i ></i> TEST</a>
+                <%-- <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a> --%>
+                <%-- <a href="Controller?id=creation_annonce"><i ></i> TEST</a> --%>
                 <%-- <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a> --%>
                 <a href="Controller?id=accueil_biens"></i> Produits</a>
                 <a href="Controller?id=accueil_services"></i> Services</a>

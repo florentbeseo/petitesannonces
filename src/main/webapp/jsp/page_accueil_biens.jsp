@@ -40,8 +40,10 @@
         </div>
     </header>
 
-    <div>
-        <a href="Controller?id=creation_annonce">Nouvelle Annonce</a>
-    </div>
+    <c:if test="${connecte}">
+        <div>
+            <a href="Controller?id=creation_annonce">Nouvelle Annonce</a>
+        </div>
+    </c:if>
 </body>
 </html>

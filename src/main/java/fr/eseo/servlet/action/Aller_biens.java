@@ -17,6 +17,7 @@ public class Aller_biens implements Action {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {
+
         forward(request, response, "/jsp/page_inscription.jsp");
     }
 }

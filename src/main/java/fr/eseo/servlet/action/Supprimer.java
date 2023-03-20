@@ -16,9 +16,16 @@ public class Supprimer implements Action{
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        Utilisateur utilisateur = daoutilisateur.recupUtilisateur(session.getAttribute("mail").toString());
 
-        daoutilisateur.suprimerUtilisateur(utilisateur);
+
+        if(session.getAttribute("mail_selec") != null){
+            Utilisateur utilisateur = daoutilisateur.recupUtilisateur(session.getAttribute("mail_selec").toString());
+            daoutilisateur.suprimerUtilisateur(utilisateur);
+        }
+        else{
+            Utilisateur utilisateur = daoutilisateur.recupUtilisateur(session.getAttribute("mail").toString());
+            daoutilisateur.suprimerUtilisateur(utilisateur);
+        }
 
         forward(request, response, "jsp/page_accueil_temporaire.jsp");
     }

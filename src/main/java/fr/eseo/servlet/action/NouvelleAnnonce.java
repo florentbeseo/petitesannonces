@@ -42,7 +42,13 @@ public class NouvelleAnnonce implements Action{
 
         //request.getParameter("Nu") != null && !request.getParameter("Nu").equals("")
 
-        Annonce annonce = new Annonce(10.5F, "test", "test", "test", 1, false);
+        HttpSession session = request.getSession();
+
+        Utilisateur utilisateur = daoutilisateur.recupUtilisateur(session.getAttribute("mail").toString());
+        System.out.println("mail: "+utilisateur.getAdresse());
+        System.out.println("idUtilisateur: "+utilisateur.getIdUtilisateur());
+
+        Annonce annonce = new Annonce(10.5F, "test", "test", "test", utilisateur.getIdUtilisateur(), false);
         daoannonce.ajouterAnnonce(annonce);
 
         forward(request, response, "jsp/page_creation_annonce.jsp");

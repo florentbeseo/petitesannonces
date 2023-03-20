@@ -76,7 +76,7 @@
             <br>
             <c:if test="${admin_utilisateur}">
                 <a href="Controller?id=bloquer_compte">Bloquer Compte de ${mail_selec}</a>
-                <a href="Controller?id=suppression_admin">Supprimer Compte de ${mail_selec}</a>
+                <a href="Controller?id=supprimer">Supprimer Compte de ${mail_selec}</a>
                 <c:if test="${bloque_admin}">
                     <a href="Controller?id=bloquer_admin">Bloquer Droit Admin de ${mail_selec}</a>
                 </c:if>

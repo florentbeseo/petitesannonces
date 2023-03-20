@@ -16,16 +16,16 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,anniversaire,tel,isAdmin,isBloque) VALUES(?,?,?,?,?,?,?,?,?,?);"))
         {
-            preparedStatement.setInt(   1, utilisateur.getInd ());
-            preparedStatement.setString(2, utilisateur.getPseudo ());
-            preparedStatement.setString(3, utilisateur.getAdresse ());
-            preparedStatement.setString(4, utilisateur.getMdp ());
-            preparedStatement.setString(5, utilisateur.getNom ());
-            preparedStatement.setString(6, utilisateur.getPrenom ());
-            preparedStatement.setDate(  7, utilisateur.getAnniversaire ());
-            preparedStatement.setString(8, utilisateur.getTel ());
-            preparedStatement.setBoolean(9, utilisateur.isAdmin());
-            preparedStatement.setBoolean(10, utilisateur.isBloque());
+            preparedStatement.setInt(       1,  utilisateur.getInd ());
+            preparedStatement.setString(    2,  utilisateur.getPseudo ());
+            preparedStatement.setString(    3,  utilisateur.getAdresse ());
+            preparedStatement.setString(    4,  utilisateur.getMdp ());
+            preparedStatement.setString(    5,  utilisateur.getNom ());
+            preparedStatement.setString(    6,  utilisateur.getPrenom ());
+            preparedStatement.setDate(      7,  utilisateur.getAnniversaire ());
+            preparedStatement.setString(    8,  utilisateur.getTel ());
+            preparedStatement.setBoolean(   9,  utilisateur.isAdmin());
+            preparedStatement.setBoolean(   10, utilisateur.isBloque());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,15 +53,15 @@ public class DAOUtilisateurMariaDB implements DAOUtilisateur {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "UPDATE utilisateur SET nom=?, prenom=?, adresse=?, tel=?, pseudo=?, isBloque=?, isAdmin=?, ind=? WHERE idUtilisateur=?;")){
-            preparedStatement.setString(1, utilisateur.getNom ());
-            preparedStatement.setString(2, utilisateur.getPrenom ());
-            preparedStatement.setString(3, utilisateur.getAdresse ());
-            preparedStatement.setString(4, utilisateur.getTel ());
-            preparedStatement.setString(5, utilisateur.getPseudo ());
-            preparedStatement.setBoolean(6, utilisateur.isBloque());
-            preparedStatement.setBoolean(7, utilisateur.isAdmin());
-            preparedStatement.setString(8, Integer.toString ( utilisateur.getInd ()));
-            preparedStatement.setString(9, Integer.toString ( utilisateur.getIdUtilisateur ()));
+            preparedStatement.setString(    1,  utilisateur.getNom ());
+            preparedStatement.setString(    2,  utilisateur.getPrenom ());
+            preparedStatement.setString(    3,  utilisateur.getAdresse ());
+            preparedStatement.setString(    4,  utilisateur.getTel ());
+            preparedStatement.setString(    5,  utilisateur.getPseudo ());
+            preparedStatement.setBoolean(   6,  utilisateur.isBloque());
+            preparedStatement.setBoolean(   7,  utilisateur.isAdmin());
+            preparedStatement.setString(    8,  Integer.toString ( utilisateur.getInd ()));
+            preparedStatement.setString(    9,  Integer.toString ( utilisateur.getIdUtilisateur ()));
             preparedStatement.executeUpdate();
         }
         catch (SQLException e)

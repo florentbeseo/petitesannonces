@@ -18,14 +18,14 @@ public class DAOAnnoncesMariaDB implements DAOAnnonce
              PreparedStatement preparedStatement = connexion.prepareStatement(
                      "INSERT INTO annonce(idAnnonce , prix , extra , descriptif, vendeur , categorie , isVisible , isFini) VALUES(?, ?, ?, ?, ?, ?, ?, ?);"))
         {
-            /*preparedStatement.setString(1, annonce.getIdAnnonce ());
-            preparedStatement.setString(2, annonce.getPrix ());
-            preparedStatement.setString(3, annonce.getExtra ());
-            preparedStatement.setString(4, annonce.getDescriptif ());
-            preparedStatement.setString(5, annonce.getVendeur ());
-            preparedStatement.setString(6, Boolean.toString ( annonce.isCategorie ()  ) );
-            preparedStatement.setString(7, Boolean.toString ( annonce.isVisible ()    ) );
-            preparedStatement.setString(8, Boolean.toString ( annonce.isFini ()       ) );*/
+            preparedStatement.setInt(       1,  annonce.getIdAnnonce ());
+            preparedStatement.setFloat(     2,  annonce.getPrix ());
+            preparedStatement.setString(    3,  annonce.getExtra ());
+            preparedStatement.setString(    4,  annonce.getDescriptif ());
+            preparedStatement.setInt(       5,  annonce.getVendeur ());
+            preparedStatement.setBoolean(   6,  annonce.isCategorie ());
+            preparedStatement.setBoolean(   7,  annonce.isVisible ());
+            preparedStatement.setBoolean(   8,  annonce.isFini ());
             preparedStatement.executeUpdate();
         } catch (SQLException e)
         {

@@ -4,7 +4,7 @@ body {
     background-color: grey;
     font-family: 'Arial';
 }
-.login{
+login{
     width: 430px;
     overflow: hidden;
     margin: auto;
@@ -27,14 +27,14 @@ label{
     margin-bottom: 10px;
     color: black;
 }
-#Uname{
+Uname{
     width: 300px;
     height: 30px;
     border: none;
     border-radius: 3px;
     padding-left: 8px;
 }
-#Mdp{
+#Pass{
     width: 300px;
     height: 30px;
     border: none;
@@ -161,20 +161,20 @@ header {
     height: 90px;
 }
 
-.logo{
+logo{
     float: left;
     padding: 27px 0;
     color: #fff;
 }
 
-.navigation-menu{
+navigation-menu{
     float: right;
     display: flex;
     align-items: center;
     min-height: 90px;
 }
 
-.navigation-menu a{
+navigation-menu a{
     margin-left: 10px;
     color: #ddd;
     text-transform: uppercase;
@@ -184,39 +184,39 @@ header {
     transition: .3s linear;
 }
 
-.navigation-menu a:hover{
+navigation-menu a:hover{
     background: #273b91;
     color: #fff;
     transform: scale(1.1);
 }
-.anonces{
+anonces{
     margin: 20px;
     padding: 20px;
     background-color: aliceblue;
 
 }
-.annonce {
+annonce {
     border: 5px solid black;
     padding: 10px;
     margin: 20px;
     background-color: lightgrey;
 }
 
-.annonce-titre {
+annonce-titre {
     font-size: 1.5em;
     margin-top: 0;
 }
 
-.annonce-prix {
+annonce-prix {
     color: red;
     font-weight: bold;
     font-size: xx-large;
 }
 
-.annonce-description {
+annonce-description {
 
 }
-.photo{
+photo{
     width:15%;
     height:15%;
     object-position: left;
@@ -241,7 +241,7 @@ header {
 
 
 
-.panel-title {
+panel-title {
     font-size: 24px;
     width: 100%;
     position: relative;
@@ -251,7 +251,7 @@ header {
     cursor: pointer;
 }
 
-.panel-content {
+panel-content {
     font-size: 20px;
     padding: 0px 14px;
     margin: 0 40px;
@@ -266,13 +266,13 @@ header {
     transition: .4s ease;
 }
 
-.panel:checked ~ .panel-content{
+panel:checked ~ .panel-content{
     height: auto;
     opacity: 1;
     padding: 14px;
 }
 
-.plus {
+plus {
     position: absolute;
     margin-left: 20px;
     margin-top: 4px;
@@ -289,8 +289,13 @@ header {
     -o-transition: .2s ease;
     transition: .2s ease;
 }
+panel:checked ~ .plus {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
 
-
-.panel {
+panel {
     display: none;
 }

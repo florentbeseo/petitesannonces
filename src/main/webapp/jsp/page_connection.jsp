@@ -28,10 +28,10 @@
 
     <form class="login" method='POST' action='Controller?id=connection'>
         <label><b>Nom d'utilisateur</b></label>
-        <input type="email" name="Nu" id="Nu" placeholder="Username" required>
+        <input type="email" name="Nu" id="name" placeholder="Username" required>
         <br><br>
         <label><b>Mot de passe</b></label>
-        <input type="Password" name="Mdp" id="Mdp" placeholder="Password" required>
+        <input type="Password" name="Mdp" id="Pass" placeholder="Password" required>
         <br><br>
         <input type="submit" name="log" id="log" value="Se connecter">
         <br><br>

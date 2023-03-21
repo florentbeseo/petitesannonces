@@ -35,6 +35,12 @@ public class Accueil_Biens implements Action
             }
         }
 
+        List<String> liste_titre = new ArrayList<>();
+        for (int i=0; i<liste_annonce.size(); i++){
+            liste_titre.add(liste_annonce.get(i).getTitre());
+        }
+        request.setAttribute("liste_titre", liste_titre);
+
         List<Annonce> liste_trier;
         String selec = request.getParameter("selec");
         if(request.getParameter("selec") != null) {

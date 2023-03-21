@@ -218,3 +218,65 @@ header {
 }
 
 
+
+
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px ;
+}
+
+.container {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: calc( -1 * 1rem);
+    margin-left: calc( -1 * 1rem);
+}
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.col {
+    flex: 0 0 auto;
+}
+
+.presentation {
+    max-width: 500px;
+    background-color: lightgrey;
+    border-radius: 15px ;
+}
+
+.photo {
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 0;
+}
+
+.coordinate{
+    padding-top: 0.5em;
+    padding-left: 1em;
+}
+
+.coordinate dt{
+    font-weight: bold;
+}
+
+.coordinate h1 span{ /
+    display: block;
+    font-weight: normal;
+}
+
+

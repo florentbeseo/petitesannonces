@@ -49,8 +49,7 @@ public class Inscription implements Action{
                                     boolean etat_mail = verification_mail(mail, request, liste_utilisateur);
                                     if (etat_mail == true && etat_age == true && etat_telephone == true) {
                                         Utilisateur utilisateur = new Utilisateur(pseudo, mail, mdp,  nom, prenom, anniversaire_reel, telephone);
-                                        //Utilisateur utilisateur = new Utilisateur(pseudo, mail, nom, prenom, anniversaire_reel, telephone);
-                                        //utilisateur.setMdpC(mdp);
+                                        utilisateur.setMdpC(utilisateur.getMdp());
                                         HttpSession session = request.getSession();
                                         session.setAttribute("pseudo", utilisateur.getPseudo());
                                         session.setAttribute("connecte", true);

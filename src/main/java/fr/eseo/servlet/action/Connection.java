@@ -19,7 +19,7 @@ public class Connection implements Action
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException
     {
 
-        /*HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
 
         String mail = request.getParameter("Nu");
         String mdp = request.getParameter("Mdp");
@@ -40,14 +40,14 @@ public class Connection implements Action
             else{
                 request.setAttribute("error", true);
             }
-        }*/
+        }
 
         //mode de test
-        String mail = "theo.georjon@reseau.eseo.fr";
+        /*String mail = "theo.georjon@reseau.eseo.fr";
         HttpSession session = request.getSession();
         session.setAttribute("mail", mail);
         session.setAttribute("connecte", true);
-        forward(request, response, "jsp/page_acceuil.jsp");
+        forward(request, response, "jsp/page_acceuil.jsp");*/
 
         forward(request,response,"jsp/page_connection.jsp");
     }
@@ -60,7 +60,7 @@ public class Connection implements Action
         boolean etat = false;
 
         for (int i=0; i<liste_utilisateur.size(); i++){
-            if(liste_utilisateur.get(i).getAdresse().equals(mail) && /*liste_utilisateur.get(i).isBonMdp(mdp)*/ liste_utilisateur.get(i).getMdp().equals(mdp)){
+            if(liste_utilisateur.get(i).getAdresse().equals(mail) && liste_utilisateur.get(i).isBonMdp(mdp) /*liste_utilisateur.get(i).getMdp().equals(mdp)*/){
                 if(liste_utilisateur.get(i).isBloque() == false) {
                     etat = true;
                     Utilisateur utilisateur = daoUtilisateur.recupUtilisateur(liste_utilisateur.get(i).getAdresse());

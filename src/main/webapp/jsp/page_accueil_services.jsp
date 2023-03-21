@@ -13,7 +13,7 @@
     <title>Page Services</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="HTML/style/styles.css">
 </head>
 
 <body>
@@ -39,5 +39,36 @@
             </nav>
         </div>
     </header>
+
+    <c:forEach var="annonce" items="${requestScope.liste_annonce}">
+        <div class="annonce">
+            <h2 class="annonce-titre">Titre : ${annonce.titre}</h2>
+            <p class="annonce-prix">Prix : ${annonce.prix}</p>
+            <div style="float: left"></div>
+            <img class="photo" src="https://cdn.futura-sciences.com/sources/images/diaporama/1009-diapo-ponts/170314-album-pont2.jpg">
+            <p class="vendeur" style="float: right">Vendeur : ${annonce.vendeur}</p>
+            <div class="annonce-description">Description : ${annonce.descriptif}</div>
+        </div>
+    </c:forEach>
+
+    <form method="POST" action="Controller?id=accueil_services">
+        <ul class="bar_option">
+            <li class="deroulant">
+                <select name="selec">
+                    <option value="none">Type</option>
+                    <option value="vehicule">Vehicule</option>
+                    <option value="mobilier">Mobilier</option>
+                    <option value="sport">Sport</option>
+                    <option value="exterieur">Exterieur</option>
+                    <option value="animalier">Animalier</option>
+                    <option value="numerique">Numérique</option>
+                    <option value="loisir">Loisir</option>
+                    <option value="travail">Loisir</option>
+                </select>
+            </li>
+            <input type="text" name="recherche" placeholder="Rechercher...">
+            <input type="submit" name="appliquer" value="Appliquer">
+        </ul>
+    </form>
 </body>
 </html>

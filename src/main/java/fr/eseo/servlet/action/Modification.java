@@ -74,7 +74,7 @@ public class Modification implements Action{
 
         if (mdp != null && !mdp.equals("")) {
             utilisateur.setMdp(mdp);
-            session.setAttribute("mdp", utilisateur.getMdp());
+            //session.setAttribute("mdp", utilisateur.getMdp());
         }
 
         if (request.getParameter("log") != null) {

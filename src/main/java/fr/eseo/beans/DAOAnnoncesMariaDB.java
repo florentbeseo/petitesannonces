@@ -155,7 +155,6 @@ public class DAOAnnoncesMariaDB implements DAOAnnonce
                 boolean categorie   = resultat.getBoolean ( "categorie"     );
                 boolean isVisible   = resultat.getBoolean ( "isVisible"     );
                 boolean isFini      = resultat.getBoolean ( "isFini"        );
-                System.out.println("isFini:"+isFini);
                 int vendeur         = resultat.getInt (     "vendeur"       );
 
                 Annonce annonce = new Annonce();
@@ -186,7 +185,7 @@ public class DAOAnnoncesMariaDB implements DAOAnnonce
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT prix, extra, descriptif, etat , type, titre, envoi, categorie , isVisible , isFini, vendeur FROM annonce;")) {
+                     "SELECT prix, extra, descriptif, etat/*, img*/ , type, titre, envoi, categorie , isVisible , isFini, vendeur FROM annonce;")) {
             while (resultat.next())
             {
                 float prix          = resultat.getFloat (   "prix"          );
@@ -207,6 +206,7 @@ public class DAOAnnoncesMariaDB implements DAOAnnonce
                 annonce.setExtra(extra);
                 annonce.setDescriptif(descriptif);
                 annonce.setEtat(etat);
+                //annonce.setImg(img);
                 annonce.setType(type);
                 annonce.setTitre(titre);
                 annonce.setEnvoi (envoi);

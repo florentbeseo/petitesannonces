@@ -26,7 +26,6 @@ public class NouvelleAnnonce implements Action{
         int vendeur = utilisateur.getIdUtilisateur();
 
         boolean categorie = Boolean.parseBoolean(request.getParameter("categorie"));
-        System.out.println("cathegorie: "+categorie);
         boolean visible = true;
         boolean fini = false;
 

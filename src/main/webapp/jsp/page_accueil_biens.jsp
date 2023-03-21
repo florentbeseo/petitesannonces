@@ -13,7 +13,7 @@
     <title>Page Biens</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="HTML/style/styles.css">
 </head>
 
 <body>
@@ -39,14 +39,7 @@
         </div>
     </header>
 
-    <c:if test="${connecte}">
-        <div>
-            <a href="Controller?id=creation_annonce">Nouvelle Annonce</a>
-        </div>
-    </c:if>
-
-
-    <c:forEach var="annonce" items="${requestScope.test}">
+    <c:forEach var="annonce" items="${requestScope.liste_annonce}">
         <div class="annonce">
             <h2 class="annonce-titre">Titre : ${annonce.titre}</h2>
             <p class="annonce-prix">Prix : ${annonce.prix}</p>
@@ -57,5 +50,24 @@
         </div>
     </c:forEach>
 
+    <form method="POST" action="Controller?id=accueil_biens">
+        <ul class="bar_option">
+            <li class="deroulant">
+                <select name="selec">
+                    <option value="none">Type</option>
+                    <option value="vehicule">Vehicule</option>
+                    <option value="mobilier">Mobilier</option>
+                    <option value="sport">Sport</option>
+                    <option value="exterieur">Exterieur</option>
+                    <option value="animalier">Animalier</option>
+                    <option value="numerique">Numérique</option>
+                    <option value="loisir">Loisir</option>
+                    <option value="travail">Loisir</option>
+                </select>
+            </li>
+            <input type="text" name="recherche" placeholder="Rechercher...">
+            <input type="submit" name="appliquer" value="Appliquer">
+        </ul>
+    </form>
 </body>
 </html>

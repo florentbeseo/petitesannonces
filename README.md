@@ -43,17 +43,16 @@ foreign key(vendeur) references utilisateur(idUtilisateur) on delete cascade
 On propose différent profils pour pré-remplire la table utilisateur : 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,anniversaire,tel,isAdmin,isBloque) VALUES(-3,"Patr1k","patrick@mail.fr","Pat123","Patrick","Meunier",1987-10-09,0610000000,0,0);
+INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,anniversaire,tel,isAdmin,isBloque) VALUES(5,"Est3lle","estelle@mail.fr","Angers456","Estelle","Lambert",1976-05-12,0620000000,0,0);
+INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,anniversaire,tel,isAdmin,isBloque) VALUES(0,"Pulpe","stan@mail.fr","CR7","Stan","Gomez",2004-03-27,0630000000,0,0);
+INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,anniversaire,tel,isAdmin,isBloque) VALUES(10,"AdMineur","admin@mail.fr","admin","AD","Boulot",1999-09-26,0610009000,1,0);
 
-INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(-3,"Patr1k","patrick@mail.fr","Pat123","Patrick","Meunier",0610000000,1987-10-09,0,0);
-INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(5,"Est3lle","estelle@mail.fr","Angers456","Estelle","Lambert",0620000000,1976-05-12,0,0);
-INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(0,"Pulpe","stan@mail.fr","CR7","Stan","Gomez",0630000000,2004-03-27,0,0);
-INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(10,"AdMineur","admin@mail.fr","admin","AD","Boulot",0610009000,1999-09-26,1,0);
-
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 De même on fournit de quoi remplir les annonces :
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 14.00, "objet", "Ensemble de 20 vis acier et inox", "Neuf", "img", "Bricolage", "Vis acier inox", 0, 1, 1, 2);
 INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 13.25, "objet", "tapis de souris anti-dérapant panda", "occasion", "img", "Loisir", "Tapis de souris panda", 0, 1, 1, 3);

@@ -54,14 +54,12 @@ De même on fournit de quoi remplir les annonces :
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 14.00, /item, "Ensemble de 20 vis acier et inox", "Neuf", "img", "type", "titre, 0, 1, 1, 2);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /item, "desc", "etat", "img", "type", "titre, 0, 1, 1, 3);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /item, "desc", "etat", "img", "type", "titre, 0, 1, 0, 2);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /item, "desc", "etat", "img", "type", "titre, 0, 0, 1, 1);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /item, "desc", "etat", "img", "type", "titre, 0, 0, 0, 3);
-
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /heure, "desc", "", "img", "type", "titre, 1, 1, 1, 2);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /heure, "desc", "", "img", "type", "titre, 1, 1, 1, 3);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /heure, "desc", "", "img", "type", "titre, 1, 1, 0, 2);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /heure, "desc", "", "img", "type", "titre, 1, 0, 1, 1);
-INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( ?, /heure, "desc", "", "img", "type", "titre, 1, 0, 0, 3);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 14.00, "objet", "Ensemble de 20 vis acier et inox", "Neuf", "img", "type", "titre, 0, 1, 1, 2);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 13.25, "objet", "tapis de souris anti-dérapant panda", "occasion", "img", "Loisir", "Tapis de souris panda", 0, 1, 1, 3);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 9.25, "/item", "Lot de plusieur peinture d'animaux à l'huile", "Neuf", "img", "Mobilier", "Peinture à l'huile", 0, 1, 0, 2);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 212.00, "objet", "Authentique mousquet de la première guerre mondiale bien conservé", "occasion", "img", "Mobilier", "Mousquet première guerre mondiale", 0, 0, 1, 1);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 11.00, "€/heure", "Babysiting de deux enfants le mecredi après-midi pendant 2 mois", "", "img", "Babysiting", "Babysiting", 1, 0, 0, 3);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 3.5, "€/heure", "Gardienage de chiens les week-ends de juillet", "", "img", "Babysiting", "Gardienage de chiens", 1, 1, 1, 3);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 27.00, "€/item", "Photographie d'évenement de particulier ou de cérémonie officielle", "", "img", "Photographie", "Photographie pour particulier", 1, 1, 0, 2);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 60.00, "total", "Nettoyage de voiture pour particulier ou entreprise", "", "img", "Service", "Nettoyage de voiture", 1, 0, 1, 1);
+INSERT INTO annonce(prix , extra , descriptif, etat, img, type, titre, categorie , isVisible , isFini, vendeur) VALUES( 12.0, "€/heure", "Aide au déménagement d'un studio dans le centre", "", "img", "Demenagement", "Aide au déménagement", 1, 0, 0, 3);

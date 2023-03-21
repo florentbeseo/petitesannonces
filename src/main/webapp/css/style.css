@@ -3,8 +3,10 @@ body {
     padding: 0;
     background-color: grey;
     font-family: 'Arial';
+    overflow-x: hidden;
+
 }
-.login{
+login{
     width: 430px;
     overflow: hidden;
     margin: auto;
@@ -34,8 +36,7 @@ label{
     border-radius: 3px;
     padding-left: 8px;
 }
-#Pass
-{
+#Pass{
     width: 300px;
     height: 30px;
     border: none;
@@ -78,9 +79,9 @@ label{
     padding-left: 7px;
     color: white;
     background-color: darkblue;
-
-
 }
+
+
 span{
     color: white;
     font-size: 17px;
@@ -148,6 +149,9 @@ a{
     background-color: grey;
 }
 
+
+
+
 header {
     background-color: lightgrey;
     padding: 20px;
@@ -155,20 +159,20 @@ header {
     height: 90px;
 }
 
-.logo{
+logo{
     float: left;
     padding: 27px 0;
     color: #fff;
 }
 
-.navigation-menu{
+navigation-menu{
     float: right;
     display: flex;
     align-items: center;
     min-height: 90px;
 }
 
-.navigation-menu a{
+navigation-menu a{
     margin-left: 10px;
     color: #ddd;
     text-transform: uppercase;
@@ -178,35 +182,36 @@ header {
     transition: .3s linear;
 }
 
-.navigation-menu a:hover{
+navigation-menu a:hover{
     background: #273b91;
     color: #fff;
     transform: scale(1.1);
 }
-.anonces{
+anonces{
     margin: 20px;
     padding: 20px;
     background-color: aliceblue;
 
 }
-.annonce {
+annonce {
     border: 5px solid black;
     padding: 10px;
     margin: 20px;
     background-color: lightgrey;
 }
 
-.annonce-titre {
+annonce-titre {
     font-size: 1.5em;
     margin-top: 0;
 }
 
-.annonce-prix {
+annonce-prix {
     color: red;
     font-weight: bold;
+    font-size: xx-large;
 }
 
-.annonce-description {
+annonce-description {
 
 }
 .photo{
@@ -214,7 +219,6 @@ header {
     height:15%;
     object-position: left;
 }
-.vendeur{
-}
+
 
 

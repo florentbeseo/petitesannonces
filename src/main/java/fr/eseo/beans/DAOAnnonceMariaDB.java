@@ -74,7 +74,7 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
     {
         try (Connection connexion = daoFactory.getConnection() ;
              PreparedStatement preparedStatement = connexion.prepareStatement(
-                     "UPDATE annonce SET idAnnonce=? , prix=? , extra=? , descriptif=?, etat=? , img=? , type=? , titre=? , envoi=?, categorie=? , isVisible=? , isFini=? , vendeur=? WHERE id=?;")){
+                     "UPDATE annonce SET idAnnonce=? , prix=? , extra=? , descriptif=?, etat=? , img=? , type=? , titre=? , envoi=?, categorie=? , isVisible=? , isFini=? , vendeur=? WHERE idAnnonce=?;")){
             preparedStatement.setInt    (1, annonce.getIdAnnonce () );
             preparedStatement.setFloat  (2, annonce.getPrix ()      );
             preparedStatement.setString (3, annonce.getExtra ()     );

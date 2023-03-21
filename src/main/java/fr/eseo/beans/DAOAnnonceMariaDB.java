@@ -6,12 +6,22 @@ import java.util.List;
 /*
     Permet la gestion de la table annonce sur mariaDB
     @author Amiaud Antoine
-    @version 2.1
+    @version 2.5
     @see DAOFactory
  */
 public class DAOAnnonceMariaDB implements DAOAnnonce
 {
+    /*
+        Le DAOFactory sert à liée le site à la table annonce
+        @author Amiaud Antoine
+        @see DAOFactory
+    */
     private final DAOFactory daoFactory;
+    /*
+        Constructeur unique, renseigne le DAOFactory dans lequel cette classe s'implémente
+        @author Amiaud Antoine
+        @see DAOFactory
+    */
     DAOAnnonceMariaDB ( DAOFactory daoFactory)
     {
         this.daoFactory = daoFactory;

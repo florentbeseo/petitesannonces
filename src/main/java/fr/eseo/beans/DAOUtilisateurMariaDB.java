@@ -5,14 +5,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-Description de la classe
-@author Nom
-@version 2.1
-@since 1.3
-@see AutreClasse
+    Permet la gestion de la table utilisateur sur mariaDB
+    @author Amiaud Antoine
+    @version 2.2
+    @see DAOFactory
  */
 public class DAOUtilisateurMariaDB implements DAOUtilisateur {
+    /*
+        Le DAOFactory sert à liée le site à la table utilisateur
+        @author Amiaud Antoine
+        @see DAOFactory
+    */
     private final DAOFactory daoFactory;
+    /*
+        Constructeur unique, renseigne le DAOFactory dans lequel cette classe s'implémente
+        @author Amiaud Antoine
+        @see DAOFactory
+    */
     DAOUtilisateurMariaDB(DAOFactory daoFactory) {
         this.daoFactory = daoFactory;
     }

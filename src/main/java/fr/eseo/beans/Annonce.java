@@ -1,17 +1,20 @@
 package fr.eseo.beans;
 
+import java.sql.Date;
+
 public class Annonce
 {
     //Attributs
     private int idAnnonce;          //Numéro de l'annonce
     private float prix;             //Prix de l'annonce
-    private String extra;           //Cas du €/heure ou /items etc...
+    private String extra;           //Cas du €/heure ou /items ou objet ou total etc...
     private String descriptif;      //Description de l'annonce
     private String etat;            //Renseigne l'état structurelle du biens Neuf|Intacte|Occasion|Casse|EnPoudre
     private String img;             //nom de l'image de l'annonce
     private String type;            //Vehicule|Mobilier|Exterieur|Sport|Animalier|Numerique|Loisir|Travail|Bricolage
-                                    //Demenagement|Chantier|Babysiting|Accompagnement|Photographie
+                                    //Demenagement|Chantier|Babysiting|Accompagnement|Photographie|Service
     private String titre;           //Titre de l'annonce
+    private Date envoi;             //Date de mise en ligne de l'annonce
     private boolean categorie;      //Biens  0 | 1  Services
     private boolean isVisible = false;      //Si l'annonce est visible ou pas
     private boolean isFini = false;         //Si l'annonce est fini : non publiée 0 | 1 publiée
@@ -150,5 +153,15 @@ public class Annonce
     public void setTitre ( String titre )
     {
         this.titre = titre;
+    }
+
+    public java.sql.Date getEnvoi ( )
+    {
+        return envoi;
+    }
+
+    public void setEnvoi ( java.sql.Date envoi )
+    {
+        this.envoi = envoi;
     }
 }

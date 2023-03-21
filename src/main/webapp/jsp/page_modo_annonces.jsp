@@ -34,19 +34,29 @@
     </div>
     </header>
 
-    <select>
-        <input type="checkbox" id="modifier" onclick="confirmer=1">
-        <label for="modifier">Annonces à confirmer</label>
-    </select>
-    <confirmation>
-        <p>ici on aura les annonce que le modo devra confirmer</p>
-        <annonce>
-            <a>titre</a>
-        </annonce>
-    </confirmation>
+    <input type="checkbox" id="maCheckbox">
+    <label for="maCheckbox">bonjour coche :</label>
+    <p id="texte1" style="display: none;">Texte quand la checkbox est cochée. A REMPLIR</p>
+    <p id="texte2" style="display: block;">Texte quand la checkbox est décochée. A remplir</p>
+    <script>
+        // On récupère la checkbox et les éléments de texte
+        var checkbox = document.getElementById("maCheckbox");
+        var texte1 = document.getElementById("texte1");
+        var texte2 = document.getElementById("texte2");
 
-    <toute_annonce>
-        <p> ici ca sera les annonces deja confirmées qu'il peut modifier</p>
-    </toute_annonce>
+        // On ajoute un écouteur d'événement sur le changement de la checkbox
+        checkbox.addEventListener("change", function() {
+            // On teste si la checkbox est cochée ou non
+            if (checkbox.checked) {
+                // Si oui, on affiche le premier texte et on cache le deuxième
+                texte1.style.display = "block";
+                texte2.style.display = "none";
+            } else {
+                // Si non, on fait l'inverse
+                texte1.style.display = "none";
+                texte2.style.display = "block";
+            }
+        });
+    </script>
 </body>
 </html>

@@ -25,6 +25,7 @@ public class DroitAdmin implements Action{
                 request.setAttribute("admin_utilisateur", true);
                 session.setAttribute("mail_selec", objet_recherche);
                 request.setAttribute("bloque_admin", utilisateur.isAdmin());
+                request.setAttribute("isBloque", utilisateur.isBloque());
             }
         }
 

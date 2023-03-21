@@ -13,7 +13,7 @@
     <title>Page Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="HTML/style/styles.css">
 </head>
 
 <body>
@@ -78,19 +78,27 @@
             <input type="email" name="recherche" id="recherche" placeholder="Recherche utilisateur...">
             <input type="submit" name="chercher" value="Chercher">
             <br>
-            <a href="Controller?id=admin_vers_valid_annonce"></i> TEST</a>
             <c:if test="${admin_utilisateur}">
-                <a href="Controller?id=bloquer_compte">Bloquer Compte de ${mail_selec}</a>
+                <br>
+                <c:if test="${isBloque}">
+                    <a href="Controller?id=debloquer_compte">Debloquer Compte de ${mail_selec}</a>
+                </c:if>
+                <c:if test="${!isBloque}">
+                    <a href="Controller?id=bloquer_compte">Bloquer Compte de ${mail_selec}</a>
+                </c:if>
+                <br><br>
                 <a href="Controller?id=supprimer">Supprimer Compte de ${mail_selec}</a>
+                <br><br>
                 <a href="Controller?id=modifier_indice_satisfaction">Modifier l'Indice de ${mail_selec}</a>
+                <br><br>
                 <c:if test="${bloque_admin}">
                     <a href="Controller?id=bloquer_admin">Bloquer Droit Admin de ${mail_selec}</a>
                 </c:if>
             </c:if>
             <br>
             <a href="Controller?id=creer_compte">Créer Compte</a>
-            <br>
-            <p>Faire Modération Annonce</p>
+            <br><br>
+            <a href="Controller?id=admin_vers_valid_annonce">Faire Modération Annonce</a>
             <br>
         </form>
     </c:if>
@@ -125,7 +133,7 @@
     <c:if test="${modif_ind}">
         <form class="login" method="POST" action="Controller?id=modifier_indice_satisfaction">
             <label><b>Indice de Satisfaction:</b></label>
-            <input type="number" name="indice" placeholder=${ind} required>
+            <input type="number" name="indice" placeholder=${ind} >
             <input type="submit" name="valider" value="Valider">
         </form>
     </c:if>

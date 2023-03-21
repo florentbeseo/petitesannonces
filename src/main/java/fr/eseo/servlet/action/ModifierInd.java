@@ -21,16 +21,14 @@ public class ModifierInd implements Action{
         request.setAttribute("modif_ind", true);
         request.setAttribute("ind", utilisateur.getInd());
 
-        if (request.getParameter("indice") != null) {
-            int ind = Integer.parseInt(request.getParameter("indice"));
+        String nouvelleIndice = request.getParameter("indice");
+        if (nouvelleIndice != null && !nouvelleIndice.equals("")) {
+            int ind = Integer.parseInt(nouvelleIndice);
             if (ind >= -10 && ind <= 10) {
                 utilisateur.setInd(ind);
                 daoutilisateur.modifierUtilisateur(utilisateur);
-                request.setAttribute("modif_ind", true);
+                request.setAttribute("modif_ind", false);
             }
-            /*else {
-
-            }*/
         }
 
         forward(request, response, "jsp/page_profil.jsp");

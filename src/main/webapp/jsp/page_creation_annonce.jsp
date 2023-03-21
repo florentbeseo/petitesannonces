@@ -134,32 +134,19 @@
                     <input type="radio" name="categorie" id="service" value=false required>
                     <label for="service">service</label>
                 </p>
-
-                <%-- <label for="ville">Ville :</label>
-                <input type="text" id="ville" name="ville" required> --%>
-
                 <input type="submit" name="log" value="Déposer l'annonce">
             </form>
-
-            <c:if test="${!empty error}">
-                Tous les champs ne sont pas remplis !
-            </c:if>
         </section>
 
         <section>
             <h2>Annonces récentes</h2>
             <ul>
                 <li>
-                    <h3><%-- ${sessionScope.titre_annonce1} --%></h3>
-                    <p><%-- ${sessionScope.description_annonce1} --%></p>
-                    <p>Prix : <%-- ${sessionScope.prix_annonce_recent1} --%></p>
-                    <p>Ville : <%-- ${sessionScope.ville_annonce_recente1} --%></p>
-                </li>
-                <li>
-                    <h3><%-- ${sessionScope.titre_annonce2} --%></h3>
-                    <p><%-- ${sessionScope.description_annonce2} --%></p>
-                    <p>Prix : <%-- ${sessionScope.prix_annonce_recent2} --%></p>
-                    <p>Ville : <%-- ${sessionScope.ville_annonce_recente2} --%></p>
+                    <c:forEach var="annonce" items="${requestScope.liste_annonce}">
+                        <h3>${annonce.titre}</h3>
+                        <p>Descriptif: ${annonce.descriptif}</p>
+                        <p>Prix : ${annonce.prix}</p>
+                    </c:forEach>
                 </li>
             </ul>
         </section>

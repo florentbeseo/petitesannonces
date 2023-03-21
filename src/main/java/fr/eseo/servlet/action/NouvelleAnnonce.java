@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NouvelleAnnonce implements Action{
     @Override
@@ -26,13 +28,16 @@ public class NouvelleAnnonce implements Action{
         int vendeur = utilisateur.getIdUtilisateur();
 
         boolean categorie = Boolean.parseBoolean(request.getParameter("categorie"));
-        boolean visible = true;
-        boolean fini = false;
+
 
         Annonce annonce = new Annonce(prix, extra, descriptif, etat, img, type, titre, categorie, vendeur);
-
         daoannonce.ajouterAnnonce(annonce);
+
+        List<Annonce> liste_annonce = daoannonce.recupAnnonceTout();
+        List<Annonce> listeDerniere_annonce = new ArrayList<>();
+        request.setAttribute("liste_annonce", listeDerniere_annonce);
 
         forward(request, response, "jsp/page_creation_annonce.jsp");
     }
+
 }

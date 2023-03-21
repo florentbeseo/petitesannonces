@@ -136,6 +136,10 @@
 
                 <input type="submit" name="log" value="Déposer l'annonce">
             </form>
+
+            <c:if test="${!empty error}">
+                Tous les champs ne sont pas remplis !
+            </c:if>
         </section>
 
         <section>

@@ -34,10 +34,38 @@
     </div>
     </header>
 
+
+
     <input type="checkbox" id="maCheckbox">
-    <label for="maCheckbox">bonjour coche :</label>
-    <p id="texte1" style="display: none;">Texte quand la checkbox est cochée. A REMPLIR</p>
-    <p id="texte2" style="display: block;">Texte quand la checkbox est décochée. A remplir</p>
+    <label for="maCheckbox">annonces à valider</label>
+    <confirmation >
+        <c:forEach var="annonce" items="${requestScope.a_valider}">
+            <div class="annonce" action="Controller?id=rendre_visible">
+                <h2 class="annonce-titre">Titre : ${annonce.titre}</h2>
+                <p class="annonce-prix">Prix : ${annonce.prix}</p>
+                <div style="float: left"></div>
+                <img class="photo" src="https://cdn.futura-sciences.com/sources/images/diaporama/1009-diapo-ponts/170314-album-pont2.jpg"height="250" width="250">
+                <p class="vendeur" style="float: right">Vendeur : ${annonce.vendeur}</p>
+                <p class="idAnnonce" name="idAnnonce" val${annonce.vendeur}></p>
+                <div class="annonce-description">Description : ${annonce.descriptif}</div>
+                <input type="submit" text="rendre visible">
+            </div>
+        </c:forEach>
+    </confirmation>
+
+    <toute_annonce id="texte2" style="display: block;">
+        <c:forEach var="annonce" items="${requestScope.a_modif}">
+            <div class="annonce">
+                <h2 class="annonce-titre">Titre : ${annonce.titre}</h2>
+                <p class="annonce-prix">Prix : ${annonce.prix}</p>
+                <div style="float: left"></div>
+                <img class="photo" src="https://cdn.futura-sciences.com/sources/images/diaporama/1009-diapo-ponts/170314-album-pont2.jpg" height="250" width="250">
+                <p class="vendeur" style="float: right">Vendeur : ${annonce.vendeur}</p>
+                <div class="annonce-description">Description : ${annonce.descriptif}</div>
+            </div>
+        </c:forEach>
+
+    </toute_annonce>
     <script>
         // On récupère la checkbox et les éléments de texte
         var checkbox = document.getElementById("maCheckbox");

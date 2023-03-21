@@ -73,6 +73,7 @@
             <input type="email" name="recherche" id="recherche" placeholder="Recherche utilisateur...">
             <input type="submit" name="chercher" value="Chercher">
             <br>
+            <a href="Controller?id=admin_vers_valid_annonce"></i> TEST</a>
             <c:if test="${admin_utilisateur}">
                 <a href="Controller?id=bloquer_compte">Bloquer Compte de ${mail_selec}</a>
                 <a href="Controller?id=supprimer">Supprimer Compte de ${mail_selec}</a>

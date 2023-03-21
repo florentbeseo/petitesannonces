@@ -14,4 +14,6 @@ public interface DAOAnnonce
     List<Annonce> recupAnnonce (String typeA);
 
     List<Annonce> recupAnnonceCat (Boolean categorieA);
+
+    List<Annonce> recupAnnonceVisible(Boolean categorieA);
 }

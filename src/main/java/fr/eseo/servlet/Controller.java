@@ -41,6 +41,9 @@ public class  Controller extends HttpServlet {
         actionMap.put("creer_compte",       new CreerCompte());
         actionMap.put("deconnexion",        new Deconnexion());
         actionMap.put("modifier_indice_satisfaction", new ModifierInd());
+        actionMap.put("afficher_annonce",   new Afficher_annonce());
+        actionMap.put("admin_vers_valid_annonce", new AdminVersValid());
+        actionMap.put("rendre_visible",     new RendreVisible());
     }
 
     @Override

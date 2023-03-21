@@ -97,53 +97,6 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
         }
     }
 
-    /*
-    @Override
-    public Annonce recupAnnonce (String typeA, Boolean categorieA)
-    {
-        Annonce annonce = new Annonce ();
-        try (Connection connexion = daoFactory.getConnection() ;
-             Statement statement = connexion.createStatement() ;
-             ResultSet resultat = statement.executeQuery(
-                     "SELECT idAnnonce , prix , extra , descriptif, etat, type, titre, categorie , isVisible , isFini, vendeur FROM annonce WHERE categorie='"+categorieA+"' AND type='"+typeA+"';")) {
-            while (resultat.next())
-            {
-                int idAnnonce       = resultat.getInt (     "idAnnonce"     );
-                float prix          = resultat.getFloat (   "prix"          );
-                String extra        = resultat.getString (  "extra"         );
-                String descriptif   = resultat.getString (  "descriptif"    );
-                String etat = resultat.getString("etat");
-                //String img          = resultat.getString (  "img"           );
-                String type = resultat.getString("type");
-                String titre = resultat.getString("titre");
-                boolean categorie   = resultat.getBoolean ( "categorie"     );
-                boolean isVisible   = resultat.getBoolean ( "isVisible"     );
-                boolean isFini      = resultat.getBoolean ( "isFini"        );
-                int vendeur         = resultat.getInt (     "vendeur"       );
-
-
-                annonce.setIdAnnonce ( idAnnonce );
-                annonce.setPrix ( prix );
-                annonce.setExtra ( extra );
-                annonce.setDescriptif ( descriptif );
-                annonce.setEtat(etat);
-                annonce.setType(type);
-                annonce.setTitre(titre);
-                annonce.setCategorie ( categorie );
-                annonce.setVisible ( isVisible );
-                annonce.setFini ( isFini );
-                annonce.setVendeur ( vendeur );
-                //annonce.setImg ( img );
-
-            }
-        } catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
-        return annonce;
-    }*/
-
-
     @Override
     public List<Annonce> recupAnnonce (String typeA)
     {
@@ -242,9 +195,10 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
         try (Connection connexion = daoFactory.getConnection() ;
              Statement statement = connexion.createStatement() ;
              ResultSet resultat = statement.executeQuery(
-                     "SELECT prix, extra, descriptif, etat , type, titre, categorie , isVisible , isFini, vendeur FROM annonce;")) {
+                     "SELECT idAnnonce, prix, extra, descriptif, etat , type, titre, categorie , isVisible , isFini, vendeur FROM annonce;")) {
             while (resultat.next())
             {
+                int idAnnonce       = resultat.getInt  (     "idAnnonce"       );
                 float prix          = resultat.getFloat (   "prix"          );
                 String extra        = resultat.getString (  "extra"         );
                 String descriptif   = resultat.getString (  "descriptif"    );
@@ -258,6 +212,7 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
                 int vendeur         = resultat.getInt (     "vendeur"       );
 
                 Annonce annonce = new Annonce();
+                annonce.setIdAnnonce(idAnnonce);
                 annonce.setPrix(prix);
                 annonce.setExtra(extra);
                 annonce.setDescriptif(descriptif);
@@ -268,7 +223,7 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
                 annonce.setVisible(isVisible);
                 annonce.setFini(isFini);
                 annonce.setVendeur(vendeur);
-                if (annonce.isCategorie() == estVisible){
+                if (annonce.isVisible() == estVisible){
                     liste_annonce.add(annonce);
                 }
             }

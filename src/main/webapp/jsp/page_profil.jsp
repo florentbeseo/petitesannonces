@@ -78,7 +78,6 @@
             <input type="email" name="recherche" id="recherche" placeholder="Recherche utilisateur...">
             <input type="submit" name="chercher" value="Chercher">
             <br>
-            <a href="Controller?id=rendre_visible"></i> modération des annonces</a>
             <c:if test="${admin_utilisateur}">
                 <br>
                 <c:if test="${isBloque}">

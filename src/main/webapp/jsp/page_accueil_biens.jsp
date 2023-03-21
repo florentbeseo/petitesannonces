@@ -13,7 +13,7 @@
     <title>Page Biens</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="HTML/style/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -44,9 +44,11 @@
         </div>
     </header>
 
+    <c:set var="test" value="" scope="page" />
+
     <c:forEach var="annonce" items="${requestScope.liste_annonce}">
         <div class="annonce">
-            <h2 class="annonce-titre">Titre : ${annonce.titre}</h2>
+            <h2 class="annonce-titre"><a href="Controller?id=voir_annonce">${annonce.titre}</a></h2>
             <p class="annonce-prix">Prix : ${annonce.prix}</p>
             <div style="float: left"></div>
             <img class="photo" src="https://cdn.futura-sciences.com/sources/images/diaporama/1009-diapo-ponts/170314-album-pont2.jpg">

@@ -47,7 +47,6 @@ public class Mes_Annonces implements Action{
             }
         }
 
-        System.out.println("Nombre d'annonce: "+liste_filtrer.size());
         return liste_filtrer;
     }
 }

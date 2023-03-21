@@ -9,7 +9,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>page modération d'anonces</title>
+    <link rel="stylesheet" type="text/css" href="HTML/style/styles.css">
+
 </head>
 <body>
     <header>
@@ -56,10 +58,10 @@
                 <p class="annonce-description">Description : ${annonce.descriptif}</p>
 
                 <label for="lisible">rendre lisible</label>
-                <input type="submit" id="lisible" name="lisible" value="4567">
+                <input type="submit" id="lisible" name="lisible" value="${annonce.idAnnonce}">
 
                 <label for="supprimer">supprimer</label>
-                <input type="submit" id="supprimer" name="supprimer" value="123">
+                <input type="submit" id="supprimer" name="supprimer" value="${annonce.idAnnonce}">
 
             </div>
         </c:forEach>

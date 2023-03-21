@@ -13,7 +13,7 @@
     <title>Page Profile</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="HTML/style/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -78,7 +78,6 @@
             <input type="email" name="recherche" id="recherche" placeholder="Recherche utilisateur...">
             <input type="submit" name="chercher" value="Chercher">
             <br>
-            <a href="Controller?id=rendre_visible"></i> modération des annonces</a>
             <c:if test="${admin_utilisateur}">
                 <br>
                 <c:if test="${isBloque}">

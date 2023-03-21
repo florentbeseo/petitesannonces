@@ -25,7 +25,6 @@ public class AdminVersValid implements Action{
 
         request.setAttribute("a_valider", liste_annonce_a_valider);
         request.setAttribute("a_modif", liste_annonce_autre);
-
         forward(request, response, "jsp/page_modo_annonce.jsp");
     }
 }

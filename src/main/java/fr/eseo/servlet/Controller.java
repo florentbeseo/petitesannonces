@@ -50,6 +50,7 @@ public class  Controller extends HttpServlet {
         actionMap.put("rendre_visible",                 new RendreVisible());
         actionMap.put("mes_annonces",                   new Mes_Annonces());
         actionMap.put("debloquer_compte",               new Debloquer());
+        actionMap.put("voir_annonce",                   new SimpleAnnonce());
     }
 
     @Override

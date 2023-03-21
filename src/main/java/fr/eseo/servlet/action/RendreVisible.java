@@ -19,20 +19,6 @@ import java.util.List;
 public class RendreVisible implements Action{
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException
     {
-        //--------------------------------------------------------------------
-        /*Annonce annonce_sup =daoannonce.chercherAnnonceParId(5);
-        daoannonce.suprimerAnnonce(annonce_sup);*/
-
-        Annonce anonce_rendu_lisible =daoannonce.chercherAnnonceParId(8);
-        anonce_rendu_lisible.setVisible(true);
-        System.out.println(anonce_rendu_lisible.isVisible());
-        daoannonce.modifierAnnonce(anonce_rendu_lisible);
-        Annonce anonce_rendu_lisible2=daoannonce.chercherAnnonceParId(8);
-        System.out.println(anonce_rendu_lisible2.isVisible());
-
-
-        //--------------------------------------------------------------------
-
         List<Annonce> liste_annonce_a_valider = daoannonce.recupAnnonceVisible(false);
         List<Annonce> liste_annonce_autre = daoannonce.recupAnnonceVisible(true);
         request.setAttribute("a_valider", liste_annonce_a_valider);
@@ -41,13 +27,12 @@ public class RendreVisible implements Action{
 
         forward(request, response, "jsp/page_modo_annonce.jsp");
 
-        /*
-
         String lisible = request.getParameter("lisible");
         String supprimer = request.getParameter("supprimer");
 
         if(lisible!= null){
             Annonce annonce =daoannonce.chercherAnnonceParId(Integer.parseInt(lisible));
+            System.out.println(annonce.getIdAnnonce());
             annonce.setVisible(true);
             daoannonce.modifierAnnonce(annonce);
             forward(request, response, "jsp/page_modo_annonce.jsp");
@@ -57,7 +42,7 @@ public class RendreVisible implements Action{
             daoannonce.suprimerAnnonce(annonce);
             forward(request, response, "jsp/page_modo_annonce.jsp");
 
-        }*/
+        }
 
 
 

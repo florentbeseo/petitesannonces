@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /*
-Description de la classe
-@author Nom
-@version 2.1
-@since 1.3
-@see AutreClasse
+    Cette classe permet d'établir un lien entre le site et la base de donnée
+    @author Amiaud Antoine
+    @version 2.1
+    @since 1.3
+    @see DAOAnnonceMariaDB
  */
 public class DAOFactory
 {
@@ -64,7 +64,7 @@ public class DAOFactory
         {
             case "MariaDB":
                 setParamMariaDB("jdbc:mariadb://localhost:3306/petiteannonce", "root", "MqcvTV29");
-                return new DAOAnnoncesMariaDB(this);
+                return new DAOAnnonceMariaDB (this);
             default:
                 return null;
         }

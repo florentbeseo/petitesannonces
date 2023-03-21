@@ -10,10 +10,10 @@ Description de la classe
 @since 1.3
 @see AutreClasse
  */
-public class DAOAnnoncesMariaDB implements DAOAnnonce
+public class DAOAnnonceMariaDB implements DAOAnnonce
 {
     private final DAOFactory daoFactory;
-    DAOAnnoncesMariaDB(DAOFactory daoFactory)
+    DAOAnnonceMariaDB ( DAOFactory daoFactory)
     {
         this.daoFactory = daoFactory;
     }

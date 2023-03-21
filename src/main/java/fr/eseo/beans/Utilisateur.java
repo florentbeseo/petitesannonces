@@ -4,6 +4,13 @@ import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Date;
 
+/*
+Description de la classe
+@author Nom
+@version 2.1
+@since 1.3
+@see AutreClasse
+ */
 public class Utilisateur
 {
     //attributs

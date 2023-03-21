@@ -4,6 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/*
+Description de la classe
+@author Nom
+@version 2.1
+@since 1.3
+@see AutreClasse
+ */
 public class DAOFactory
 {
     private static volatile DAOFactory instance = null;

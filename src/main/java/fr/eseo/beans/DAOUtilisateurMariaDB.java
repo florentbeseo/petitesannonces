@@ -4,6 +4,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Description de la classe
+@author Nom
+@version 2.1
+@since 1.3
+@see AutreClasse
+ */
 public class DAOUtilisateurMariaDB implements DAOUtilisateur {
     private final DAOFactory daoFactory;
     DAOUtilisateurMariaDB(DAOFactory daoFactory) {

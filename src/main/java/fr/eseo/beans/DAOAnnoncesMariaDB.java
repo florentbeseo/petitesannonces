@@ -3,6 +3,13 @@ package fr.eseo.beans;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+/*
+Description de la classe
+@author Nom
+@version 2.1
+@since 1.3
+@see AutreClasse
+ */
 public class DAOAnnoncesMariaDB implements DAOAnnonce
 {
     private final DAOFactory daoFactory;

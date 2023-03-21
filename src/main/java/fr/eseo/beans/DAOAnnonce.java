@@ -1,5 +1,7 @@
 package fr.eseo.beans;
 
+import java.util.List;
+
 public interface DAOAnnonce
 {
     void ajouterAnnonce ( Annonce annonce );
@@ -7,5 +9,9 @@ public interface DAOAnnonce
     void suprimerAnnonce ( Annonce annonce );
 
     void modifierAnnonce ( Annonce annonce );
-    public Annonce recupAnnonce(String typeA,Boolean categorieA);
+    //Annonce recupAnnonce(String typeA,Boolean categorieA);
+
+    List<Annonce> recupAnnonce (String typeA);
+
+    List<Annonce> recupAnnonceCat (Boolean categorieA);
 }

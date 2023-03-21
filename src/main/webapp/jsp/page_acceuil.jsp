@@ -45,14 +45,8 @@
         </div>
     </c:if>
 
-    <div class="annonce">
-        <h2 class="annonce-titre">Titre : </h2>
-        <p class="annonce-prix">Prix : </p>
-        <div style="float: left"></div>
-        <img class="photo" src="https://cdn.futura-sciences.com/sources/images/diaporama/1009-diapo-ponts/170314-album-pont2.jpg">
-        <p class="vendeur" style="float: right">Vendeur : </p>
-        <div class="annonce-description">Description : </div>
-    </div>
+
+
 </body>
 
 </footer>

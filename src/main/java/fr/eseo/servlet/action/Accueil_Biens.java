@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Accueil_Biens implements Action
@@ -16,11 +17,9 @@ public class Accueil_Biens implements Action
     public void execute( HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException
     {
 
-        List<Annonce> liste_annonce;
+        List<Annonce> liste_annonce = daoannonce.recupAnnonceCat(false);
 
-        for (int i=0; i<10; i++){
-            System.out.println("A completer");
-        }
+        request.setAttribute("test", liste_annonce);
 
         forward(request, response, "jsp/page_accueil_biens.jsp");
     }

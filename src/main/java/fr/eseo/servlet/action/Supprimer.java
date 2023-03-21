@@ -24,10 +24,11 @@ public class Supprimer implements Action{
         }
         else{
             Utilisateur utilisateur = daoutilisateur.recupUtilisateur(session.getAttribute("mail").toString());
+            session.setAttribute("pseudo", "");
             daoutilisateur.suprimerUtilisateur(utilisateur);
         }
 
-        forward(request, response, "jsp/page_profil.jsp");
+        forward(request, response, "jsp/page_acceuil.jsp");
     }
 
 }

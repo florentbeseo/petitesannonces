@@ -57,7 +57,7 @@ public class  Controller extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String id = request.getParameter("id");
         if(id == null) {
-            id="accueil_temp";
+            id="accueil";
         }
         Action action = actionMap.get(id);
         if(action != null) {

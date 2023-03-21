@@ -4,11 +4,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 /*
-Description de la classe
-@author Nom
-@version 2.1
-@since 1.3
-@see AutreClasse
+    Permet la gestion de la table annonce sur mariaDB
+    @author Amiaud Antoine
+    @version 2.1
+    @see DAOFactory
  */
 public class DAOAnnonceMariaDB implements DAOAnnonce
 {

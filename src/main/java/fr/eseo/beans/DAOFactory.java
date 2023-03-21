@@ -10,13 +10,47 @@ import java.sql.SQLException;
     @version 2.1
     @since 1.3
     @see DAOAnnonceMariaDB
+    @see DAOUtilisateurMariaDB
  */
 public class DAOFactory
 {
+    /*
+        Permet l'instanciation d'un DAOFactory unique
+        @author Amiaud Antoine
+        @version 1.0
+        @since 0.0
+     */
     private static volatile DAOFactory instance = null;
+    /*
+        url de connection à la base de donnée
+        @author Amiaud Antoine
+        @version 1.0
+        @since 0.0
+     */
     private String url;
+    /*
+        Nom d'utilisateur de base de donnée
+        @author Amiaud Antoine
+        @version 1.0
+        @since 0.0
+     */
     private String username;
+    /*
+        mot de passe de la base de donnée
+        @author Amiaud Antoine
+        @version 1.0
+        @since 0.0
+     */
     private String password;
+    //Constructeur
+    /*
+        Constructeur vide
+        @author Amiaud Antoine
+        @version 1.0
+        @since 0.0
+        @param aucun
+        @return aucun
+     */
     private DAOFactory () {}
     public static DAOFactory getInstance()
     {

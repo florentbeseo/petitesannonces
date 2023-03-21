@@ -78,6 +78,7 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
             preparedStatement.setBoolean(10,annonce.isVisible ()    );
             preparedStatement.setBoolean(11,annonce.isFini ()       );
             preparedStatement.setInt    (12,annonce.getVendeur ()   );
+            preparedStatement.setInt    (13,annonce.getIdAnnonce () );
 
             preparedStatement.executeUpdate();
         } catch (SQLException e)

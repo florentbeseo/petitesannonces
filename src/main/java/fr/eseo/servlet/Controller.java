@@ -11,7 +11,11 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
+/*
+    Le controller permet la navigation entre les différentes pages du site et la transmission des données
+    @author Georjon Théo
+    @version 1.9
+ */
 @WebServlet(name = "Controller", value = "/Controller")
 public class  Controller extends HttpServlet {
 

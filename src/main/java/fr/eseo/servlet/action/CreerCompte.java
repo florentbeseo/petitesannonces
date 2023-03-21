@@ -13,7 +13,12 @@ import java.sql.Date;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
-
+/*
+    Action qui permet de creer un compte pour l'utilisateur
+    @author Georjon Théo
+    @version 1.1
+    @see Controller
+ */
 public class CreerCompte implements Action{
 
     @Override

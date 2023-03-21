@@ -10,7 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-
+/*
+    action qui permet de séparer les annonces à accepter par le modo de celles qui sont déja validées et d'emmener vers cette page
+    @author Birmeleboutin Florent
+    @version 1.4
+    @see Controller
+ */
 public class AdminVersValid implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException

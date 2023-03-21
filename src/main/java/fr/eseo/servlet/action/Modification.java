@@ -14,7 +14,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import static java.lang.Integer.*;
-
+/*
+    Action qui permet de modifier les informations d'un profil
+    @author Georjon Théo
+    @version 1.1
+    @see Controller
+ */
 public class Modification implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {

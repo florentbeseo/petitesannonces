@@ -12,7 +12,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+    Action qui permet l'affichage des annonces
+    @author Birmeleboutin Florent
+    @version 1.4
+    @see Controller
+ */
 public class Afficher_annonce implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException

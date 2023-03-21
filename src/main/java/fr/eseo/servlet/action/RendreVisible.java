@@ -8,7 +8,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+/*
+    Action qui permet de rendre visible ou non une annonce
+    @author Birmeleboutin Florent
+    @version 1.3
+    @see Controller
+ */
 public class RendreVisible implements Action{
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException
     {

@@ -14,7 +14,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 import static java.lang.Integer.*;
-
+/*
+    Action qui permet à un utilisateur de s'inscrire
+    @author Georjon Théo
+    @version 1.4
+    @see Controller
+ */
 public class Inscription implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException {

@@ -7,7 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+/*
+    Action qui renvoi vers la page d'aide
+    @author Amiaud Antoine
+    @version 1.0
+    @see Controller
+ */
 public class Aide implements Action
 {
     @Override

@@ -12,7 +12,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+    Action qui permet rien
+    @author Birmeleboutin Florent
+    @version 1.4
+    @see Controller
+ */
 public class Aller_biens implements Action {
 
     @Override

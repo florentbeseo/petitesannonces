@@ -8,7 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
+/*
+    Action qui permet à l'utilisateur de se déconnecter
+    @author Georjon Théo
+    @version 1.1
+    @see Controller
+ */
 public class Deconnexion implements Action{
 
     @Override

@@ -9,7 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
+/*
+    Action qui permet de modifier l'indexe de satisfaction d'un utilisateur
+    @author Georjon Théo
+    @version 1.1
+    @see Controller
+ */
 public class ModifierInd implements Action{
 
     @Override

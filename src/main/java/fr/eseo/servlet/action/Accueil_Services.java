@@ -10,7 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+    Action qui renvoi vers la page d'accueil des services et qui trie les annonces à afficher
+    @author Georjon Théo
+    @version 1.7
+    @see Controller
+ */
 public class Accueil_Services implements Action
 {
     @Override

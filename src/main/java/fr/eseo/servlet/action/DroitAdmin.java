@@ -10,7 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-
+/*
+    Action qui permet de rajouter des droits d'admin à un utilisateur
+    @author Georjon Théo
+    @version 1.1
+    @see Controller
+ */
 public class DroitAdmin implements Action{
 
     @Override

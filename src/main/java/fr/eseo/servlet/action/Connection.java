@@ -11,7 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
-
+/*
+    Action qui permet la connection d'un compte et qui vérifie ses informations
+    @author Georjon Théo
+    @version 1.4
+    @see Controller
+ */
 public class Connection implements Action
 {
 

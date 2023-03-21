@@ -8,7 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-
+/*
+    Action qui renvoit vers la page d'acceuil
+    @author Georjon Théo
+    @version 1.0
+    @see Controller
+ */
 public class Accueil implements Action{
 
     @Override

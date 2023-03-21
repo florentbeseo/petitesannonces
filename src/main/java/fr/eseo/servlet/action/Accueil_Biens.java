@@ -12,7 +12,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+    Action qui renvoi vers la page d'accueil des biens et qui trie les annonces à afficher
+    @author Georjon Théo
+    @version 1.4
+    @see Controller
+ */
 public class Accueil_Biens implements Action
 {
     @Override

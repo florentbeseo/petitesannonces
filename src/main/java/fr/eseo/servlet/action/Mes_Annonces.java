@@ -12,7 +12,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
+    Action qui permet de récupérer les annonces publiées par un utilisateur
+    @author Georjon Théo
+    @version 1.1
+    @see Controller
+ */
 public class Mes_Annonces implements Action{
 
     @Override

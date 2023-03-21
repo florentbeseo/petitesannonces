@@ -47,7 +47,7 @@ On propose différent profils pour pré-remplire la table utilisateur :
 INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(-3,"Patr1k","patrick@mail.fr","Pat123","Patrick","Meunier",0610000000,1987-10-09,0,0);
 INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(5,"Est3lle","estelle@mail.fr","Angers456","Estelle","Lambert",0620000000,1976-05-12,0,0);
 INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(0,"Pulpe","stan@mail.fr","CR7","Stan","Gomez",0630000000,2004-03-27,0,0);
-INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,anniversaire,tel,isAdmin,isBloque) VALUES(10,"AdMineur","admin@mail.fr","admin","AD","Boulot",0610009000,1999-09-26,1,0);
+INSERT INTO utilisateur(ind, pseudo,adresse,mdp,nom,prenom,tel,anniversaire,isAdmin,isBloque) VALUES(10,"AdMineur","admin@mail.fr","admin","AD","Boulot",0610009000,1999-09-26,1,0);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

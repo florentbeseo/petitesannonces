@@ -83,12 +83,12 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
             preparedStatement.setString (6, annonce.getImg ()       );
             preparedStatement.setString (7, annonce.getType ()      );
             preparedStatement.setString (8, annonce.getTitre ()     );
-            preparedStatement.setDate   (8, annonce.getEnvoi ()     );
-            preparedStatement.setBoolean(9, annonce.isCategorie ()  );
-            preparedStatement.setBoolean(10,annonce.isVisible ()    );
-            preparedStatement.setBoolean(11,annonce.isFini ()       );
-            preparedStatement.setInt    (12,annonce.getVendeur ()   );
-            preparedStatement.setInt    (13,annonce.getIdAnnonce () );
+            preparedStatement.setDate   (9, annonce.getEnvoi ()     );
+            preparedStatement.setBoolean(10, annonce.isCategorie ()  );
+            preparedStatement.setBoolean(11,annonce.isVisible ()    );
+            preparedStatement.setBoolean(12,annonce.isFini ()       );
+            preparedStatement.setInt    (13,annonce.getVendeur ()   );
+            preparedStatement.setInt    (14,annonce.getIdAnnonce () );
 
             preparedStatement.executeUpdate();
         } catch (SQLException e)
@@ -224,7 +224,9 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
                 annonce.setVisible(isVisible);
                 annonce.setFini(isFini);
                 annonce.setVendeur(vendeur);
-                if (verification_filtreCat(annonce, categorieA)) liste_annonce.add(annonce);
+                if (annonce.isCategorie() == categorieA){
+                    liste_annonce.add(annonce);
+                }
             }
         } catch (SQLException e)
         {
@@ -232,17 +234,6 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
         }
         return liste_annonce;
     }
-
-    private boolean verification_filtreCat(Annonce annonce, Boolean categorieA){
-        boolean isOkay = false;
-
-        if (annonce.isCategorie() == categorieA){
-            isOkay = true;
-        }
-
-        return isOkay;
-    }
-
 
     @Override
     public List<Annonce> recupAnnonceVisible (Boolean estVisible)
@@ -277,7 +268,9 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
                 annonce.setVisible(isVisible);
                 annonce.setFini(isFini);
                 annonce.setVendeur(vendeur);
-                if (verification_filtreVisible(annonce, estVisible)) liste_annonce.add(annonce);
+                if (annonce.isCategorie() == estVisible){
+                    liste_annonce.add(annonce);
+                }
             }
         } catch (SQLException e)
         {
@@ -286,15 +279,47 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
         return liste_annonce;
     }
 
-    private boolean verification_filtreVisible(Annonce annonce, Boolean estVisible){
-        boolean isOkay = false;
 
-        if (annonce.isCategorie() == estVisible){
-            isOkay = true;
+    @Override
+    public Annonce chercherAnnonceParId(int idannonce){
+        Annonce annonce = new Annonce();
+        try (Connection connexion = daoFactory.getConnection() ;
+             Statement statement = connexion.createStatement() ;
+             ResultSet resultat = statement.executeQuery(
+                     "SELECT idAnnonce, prix, extra, descriptif, etat , type, titre, categorie , isVisible , isFini, vendeur FROM annonce WHERE idAnnonce='"+idannonce+"' ;")) {
+            while (resultat.next())
+            {
+                int idAnnonce       = resultat.getInt  (     "idAnnonce"       );
+                float prix          = resultat.getFloat (   "prix"          );
+                String extra        = resultat.getString (  "extra"         );
+                String descriptif   = resultat.getString (  "descriptif"    );
+                String etat         = resultat.getString("etat");
+                //String img          = resultat.getString (  "img"           );
+                String type         = resultat.getString("type");
+                String titre        = resultat.getString("titre");
+                boolean categorie   = resultat.getBoolean ( "categorie"     );
+                boolean isVisible   = resultat.getBoolean ( "isVisible"     );
+                boolean isFini      = resultat.getBoolean ( "isFini"        );
+                int vendeur         = resultat.getInt (     "vendeur"       );
+
+                annonce.setIdAnnonce(idAnnonce);
+                annonce.setPrix(prix);
+                annonce.setExtra(extra);
+                annonce.setDescriptif(descriptif);
+                annonce.setEtat(etat);
+                annonce.setType(type);
+                annonce.setTitre(titre);
+                annonce.setCategorie(categorie);
+                annonce.setVisible(isVisible);
+                annonce.setFini(isFini);
+                annonce.setVendeur(vendeur);
+            }
+        } catch (SQLException e)
+        {
+            e.printStackTrace();
         }
-
-        return isOkay;
-    }
+    return annonce;
+}
 
     public List<Annonce> recupAnnonceTout ()
     {

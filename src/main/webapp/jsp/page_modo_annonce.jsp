@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
@@ -39,25 +40,34 @@
     </header>
 
 
-
     <input type="checkbox" id="maCheckbox">
-    <label for="maCheckbox">annonces à valider</label>
-    <confirmation >
+    <label for="maCheckbox" >annonces à valider</label>
+    <confirmation id="a_valider" style="display: none;">
+        <form method='POST' action="Controller?id=rendre_visible">
         <c:forEach var="annonce" items="${requestScope.a_valider}">
-            <div class="annonce" action="Controller?id=rendre_visible">
+            <div class="annonce" >
+                <c:set var="idAnnonce" value="${annonce.idAnnonce}" scope="page"/>
                 <h2 class="annonce-titre">Titre : ${annonce.titre}</h2>
                 <p class="annonce-prix">Prix : ${annonce.prix}</p>
                 <div style="float: left"></div>
                 <img class="photo" src="https://cdn.futura-sciences.com/sources/images/diaporama/1009-diapo-ponts/170314-album-pont2.jpg"height="250" width="250">
                 <p class="vendeur" style="float: right">Vendeur : ${annonce.vendeur}</p>
                 <p class="idAnnonce" name="idAnnonce" val${annonce.vendeur}></p>
-                <div class="annonce-description">Description : ${annonce.descriptif}</div>
-                <input type="submit" text="rendre visible">
+                <p class="annonce-description">Description : ${annonce.descriptif}</p>
+
+                <label for="lisible">rendre lisible</label>
+                <input type="submit" id="lisible" name="lisible" value="4567">
+
+                <label for="supprimer">supprimer</label>
+                <input type="submit" id="supprimer" name="supprimer" value="123">
+
             </div>
         </c:forEach>
+        </form>
     </confirmation>
 
-    <toute_annonce id="texte2" style="display: block;">
+    <toute_annonce id="toute_annoce" style="display: block;">
+
         <c:forEach var="annonce" items="${requestScope.a_modif}">
             <div class="annonce">
                 <h2 class="annonce-titre">Titre : ${annonce.titre}</h2>
@@ -73,20 +83,20 @@
     <script>
         // On récupère la checkbox et les éléments de texte
         var checkbox = document.getElementById("maCheckbox");
-        var texte1 = document.getElementById("texte1");
-        var texte2 = document.getElementById("texte2");
+        var a_valider = document.getElementById("a_valider");
+        var toute_annonce = document.getElementById("toute_annonce");
 
         // On ajoute un écouteur d'événement sur le changement de la checkbox
         checkbox.addEventListener("change", function() {
             // On teste si la checkbox est cochée ou non
             if (checkbox.checked) {
                 // Si oui, on affiche le premier texte et on cache le deuxième
-                texte1.style.display = "block";
-                texte2.style.display = "none";
+                a_valider.style.display = "block";
+                toute_annonce.style.display = "none";
             } else {
                 // Si non, on fait l'inverse
-                texte1.style.display = "none";
-                texte2.style.display = "block";
+                a_valider.style.display = "none";
+                toute_annonce.style.display = "block";
             }
         });
     </script>

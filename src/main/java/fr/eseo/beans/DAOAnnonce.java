@@ -17,5 +17,7 @@ public interface DAOAnnonce
 
     List<Annonce> recupAnnonceVisible(Boolean categorieA);
 
+    Annonce chercherAnnonceParId(int idannonce);
+
     List<Annonce> recupAnnonceTout ();
 }

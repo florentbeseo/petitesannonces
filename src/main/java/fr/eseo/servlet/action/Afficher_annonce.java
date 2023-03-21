@@ -27,7 +27,7 @@ public class Afficher_annonce implements Action{
         Annonce annonce=new Annonce(10, "objet", "nouveau", "casse", "img", "véhicule", "voiture",false,4);
         System.out.println(annonce.getTitre());
         String titre = annonce.getTitre();
-        forward(request, response, "jsp/page_modo_annonces.jsp");
+        forward(request, response, "jsp/page_modo_annonce.jsp");
     }
 }
 

@@ -83,7 +83,7 @@ public class Annonce
      */
     private boolean categorie;
     /*
-        Si l'annonce est visible ou pas
+        Si l'annonce est visible ou pas  : 1 = visible | 0 = invisible
         @author Amiaud Antoine
         @version 1.0
         @since 0.1
@@ -107,7 +107,6 @@ public class Annonce
 
     //Constructeurs
 
-    //Getters setters
     /*
         Constructeur vide
         @author Amiaud Antoine
@@ -145,6 +144,8 @@ public class Annonce
         this.categorie = categorie;
         this.vendeur = vendeur;
     }
+
+    //Getters setters
 
     public int getIdAnnonce ( )
     {

@@ -44,6 +44,7 @@ public class  Controller extends HttpServlet {
         actionMap.put("afficher_annonce",   new Afficher_annonce());
         actionMap.put("admin_vers_valid_annonce", new AdminVersValid());
         actionMap.put("rendre_visible",     new RendreVisible());
+        actionMap.put("mes_annonces",     new Mes_Annonces());
     }
 
     @Override

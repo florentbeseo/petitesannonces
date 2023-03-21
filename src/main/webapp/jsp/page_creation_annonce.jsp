@@ -24,8 +24,12 @@
                 <i class="menu-toggle-btn fas fa-bars"></i>
             </a>
             <nav class="navigation-menu">
-                <%-- <a href="Controller?id=accueil"><i class="fas fa-home home"></i> Home</a> --%>
-                <a href="Controller?id=accueil_biens"></i> Produits</a>
+
+                <c:if test="${connecte}">
+                    <a href="Controller?id=mes_annonces" class="aj_btn">Mes Annonces</a>
+                </c:if>
+
+                <a href="Controller?id=accueil_biens"></i> Biens</a>
                 <a href="Controller?id=accueil_services"></i> Services</a>
                 <a href="Controller?id=aide"></i> Aide</a>
 

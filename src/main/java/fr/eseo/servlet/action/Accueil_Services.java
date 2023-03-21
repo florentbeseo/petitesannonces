@@ -17,7 +17,9 @@ public class Accueil_Services implements Action
     public void execute( HttpServletRequest request, HttpServletResponse response, DAOUtilisateur daoutilisateur, DAOAnnonce daoannonce) throws ServletException, IOException
     {
 
-        List<Annonce> liste_annonce = daoannonce.recupAnnonceCat(true);
+        List<Annonce> liste_annonceCat = daoannonce.recupAnnonceCat(true);
+        List<Annonce> liste_annonce = recupVisible(true, liste_annonceCat);
+        System.out.println("taille: "+liste_annonce.size());
 
         String objet_recherche = request.getParameter("recherche");
         if(objet_recherche != null && !objet_recherche.equals("")){
@@ -40,6 +42,26 @@ public class Accueil_Services implements Action
             }
             else if (selec.equals("loisir")) {
                 liste_trier = recupType(liste_annonce, "Loisir");
+                request.setAttribute("liste_annonce", liste_trier);
+            }
+            else if (selec.equals("sport")) {
+                liste_trier = recupType(liste_annonce, "Sport");
+                request.setAttribute("liste_annonce", liste_trier);
+            }
+            else if (selec.equals("exterieur")) {
+                liste_trier = recupType(liste_annonce, "Exterieur");
+                request.setAttribute("liste_annonce", liste_trier);
+            }
+            else if (selec.equals("animalier")) {
+                liste_trier = recupType(liste_annonce, "Animalier");
+                request.setAttribute("liste_annonce", liste_trier);
+            }
+            else if (selec.equals("numerique")) {
+                liste_trier = recupType(liste_annonce, "Numerique");
+                request.setAttribute("liste_annonce", liste_trier);
+            }
+            else if (selec.equals("travail")) {
+                liste_trier = recupType(liste_annonce, "Travail");
                 request.setAttribute("liste_annonce", liste_trier);
             }
         }
@@ -92,4 +114,19 @@ public class Accueil_Services implements Action
         return liste_titre;
     }
 
+    private List<Annonce> recupVisible (Boolean isVisible, List<Annonce> liste_annonce){
+
+        List<Annonce> liste_visible = new ArrayList<>();
+        Annonce annonce;
+
+        for (int i=0; i<liste_annonce.size(); i++){
+            annonce = liste_annonce.get(i);
+            if(annonce.isVisible() == isVisible){
+                liste_visible.add(annonce);
+            }
+        }
+
+        return liste_visible;
+    }
 }
+

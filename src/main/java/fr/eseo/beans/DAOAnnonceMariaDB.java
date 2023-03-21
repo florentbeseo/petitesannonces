@@ -295,4 +295,46 @@ public class DAOAnnonceMariaDB implements DAOAnnonce
 
         return isOkay;
     }
+
+    public List<Annonce> recupAnnonceTout ()
+    {
+        List<Annonce> liste_annonce = new ArrayList<>();
+        try (Connection connexion = daoFactory.getConnection() ;
+             Statement statement = connexion.createStatement() ;
+             ResultSet resultat = statement.executeQuery(
+                     "SELECT prix, extra, descriptif, etat , type, titre, categorie , isVisible , isFini, vendeur FROM annonce;")) {
+            while (resultat.next())
+            {
+                float prix          = resultat.getFloat (   "prix"          );
+                String extra        = resultat.getString (  "extra"         );
+                String descriptif   = resultat.getString (  "descriptif"    );
+                String etat         = resultat.getString("etat");
+                //String img          = resultat.getString (  "img"           );
+                String type         = resultat.getString("type");
+                String titre        = resultat.getString("titre");
+                boolean categorie   = resultat.getBoolean ( "categorie"     );
+                boolean isVisible   = resultat.getBoolean ( "isVisible"     );
+                boolean isFini      = resultat.getBoolean ( "isFini"        );
+                int vendeur         = resultat.getInt (     "vendeur"       );
+
+                Annonce annonce = new Annonce();
+                annonce.setPrix(prix);
+                annonce.setExtra(extra);
+                annonce.setDescriptif(descriptif);
+                annonce.setEtat(etat);
+                annonce.setType(type);
+                annonce.setTitre(titre);
+                annonce.setCategorie(categorie);
+                annonce.setVisible(isVisible);
+                annonce.setFini(isFini);
+                annonce.setVendeur(vendeur);
+                liste_annonce.add(annonce);
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return liste_annonce;
+    }
 }

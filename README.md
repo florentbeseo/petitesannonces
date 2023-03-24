@@ -23,7 +23,7 @@ isBloque boolean
 create table annonce
 (
 idAnnonce int not null auto_increment primary key, 
-prix decimal(100,2), 
+prix decimal(65,2), 
 extra varchar(10), 
 descriptif varchar(1000), 
 etat varchar(20), 
